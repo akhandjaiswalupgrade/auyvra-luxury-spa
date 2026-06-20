@@ -20,6 +20,11 @@
   font-family: var(--font-sans);
 }
 
+*, *::before, *::after {
+  font-family: 'Outfit', sans-serif !important;
+}
+
+
 html, body {
   margin: 0;
   padding: 0;
