@@ -170,10 +170,10 @@ import { siteConfig } from '../data/site';
       };
 
       const petalColors = [
-        { main: '#E25865', highlight: '#F48E9E', dark: '#9E1B2C' }, // Crimson Rose
-        { main: '#FDFBF7', highlight: '#FFFFFF', dark: '#E8E2D5' }, // Jasmine White
-        { main: '#D4AF37', highlight: '#F3E5AB', dark: '#B58F22' }, // Luxurious Gold
-        { main: '#EEA2AD', highlight: '#FFB7C5', dark: '#C46D76' }  // Pale Cherry Pink
+        { main: '#967BB6', highlight: '#C5B5D6', dark: '#5E497A' }, // Lavender Purple
+        { main: '#B09FCA', highlight: '#E6E6FA', dark: '#736290' }, // Lilac / Lavender White
+        { main: '#7A5B9B', highlight: '#BFAED4', dark: '#4E3766' }, // Rich Violet
+        { main: '#E6E6FA', highlight: '#FFFFFF', dark: '#C4C4E2' }  // Pale Lavender White
       ];
 
       class Petal {
@@ -196,27 +196,27 @@ import { siteConfig } from '../data/site';
 
         constructor(isInitial = false) {
           this.x = Math.random() * petalsCanvas.width;
-          // Span initially across height, otherwise spawn above screen
+          // Spawn across screen height if initial, otherwise spawn above screen
           this.y = isInitial ? Math.random() * petalsCanvas.height : Math.random() * -100 - 20;
-          this.sizeX = Math.random() * 8 + 6;
-          this.sizeY = this.sizeX * (Math.random() * 0.4 + 1.1); // slightly elongated leaf
+          this.sizeX = Math.random() * 3 + 2.5; // 2.5px to 5.5px (smaller, delicate)
+          this.sizeY = this.sizeX * (Math.random() * 0.4 + 1.5); // elongated floret shape
           
           const colorSet = petalColors[Math.floor(Math.random() * petalColors.length)];
           this.color = colorSet.main;
           this.colorHighlight = colorSet.highlight;
           this.colorDark = colorSet.dark;
 
-          this.speedY = Math.random() * 1.2 + 0.9; // falling speed
-          this.speedX = Math.random() * 0.4 - 0.2;  // base wind offset
-          this.swaySpeed = Math.random() * 0.6 + 0.3; // sway amplitude
+          this.speedY = Math.random() * 0.35 + 0.15; // extremely slow float down
+          this.speedX = Math.random() * 0.1 - 0.05;  // very minor horizontal wind
+          this.swaySpeed = Math.random() * 0.35 + 0.15; // subtle sway
           this.swayAngle = Math.random() * Math.PI * 2;
-          this.swayAngleSpeed = Math.random() * 0.02 + 0.01; // sway speed
+          this.swayAngleSpeed = Math.random() * 0.01 + 0.005; // slow sway pacing
           
           this.rotation = Math.random() * Math.PI * 2;
-          this.rotationSpeed = (Math.random() * 0.015 - 0.0075);
+          this.rotationSpeed = (Math.random() * 0.006 - 0.003);
           
-          this.spin = Math.random() * Math.PI * 2; // 3D spin angle
-          this.spinSpeed = Math.random() * 0.03 + 0.015;
+          this.spin = Math.random() * Math.PI * 2; // slow 3D tumble
+          this.spinSpeed = Math.random() * 0.015 + 0.008;
         }
 
         update() {
@@ -226,7 +226,7 @@ import { siteConfig } from '../data/site';
           this.rotation += this.rotationSpeed;
           this.spin += this.spinSpeed;
 
-          // Recycle petals that go off bottom or sides
+          // Recycle petals
           if (this.y > petalsCanvas.height + 20 || this.x < -20 || this.x > petalsCanvas.width + 20) {
             this.x = Math.random() * petalsCanvas.width;
             this.y = Math.random() * -100 - 20;
@@ -258,9 +258,9 @@ import { siteConfig } from '../data/site';
 
           petalsCtx.fillStyle = grad;
           
-          // Subtle drop shadow for satisfying depth
-          petalsCtx.shadowBlur = 4;
-          petalsCtx.shadowColor = 'rgba(0, 0, 0, 0.25)';
+          // Subtle drop shadow
+          petalsCtx.shadowBlur = 3;
+          petalsCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
           petalsCtx.fill();
           
           petalsCtx.restore();
@@ -269,8 +269,7 @@ import { siteConfig } from '../data/site';
 
       const initPetals = () => {
         petals = [];
-        const numPetals = Math.floor((petalsCanvas.width * petalsCanvas.height) / 18000);
-        // Spawn initial batch
+        const numPetals = Math.floor((petalsCanvas.width * petalsCanvas.height) / 75000); // 4x lower density
         for (let i = 0; i < numPetals; i++) {
           petals.push(new Petal(true));
         }
