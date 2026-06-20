@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services';
+import PremiumExperiences from '../components/PremiumExperiences';
+import WhyChoose from '../components/WhyChoose.astro';
+import Benefits from '../components/Benefits.astro';
+import Journey from '../components/Journey.astro';
+import Gallery from '../components/Gallery';
+import Testimonials from '../components/Testimonials.astro';
+import BookingPush from '../components/BookingPush.astro';
+import FAQ from '../components/FAQ';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import StickyBookingDock from '../components/StickyBookingDock';
+import Header from '../components/Header';
+import GlobalEffects from '../components/GlobalEffects';
+import Marquee from '../components/Marquee';
+---
+
+<Layout title="Auyvra Luxury Spa Hyderabad">
+  <GlobalEffects client:load />
+  <Header client:load />
+  <main class="relative bg-transparent z-10 pb-20">
+    <Hero />
+    <Marquee client:load />
+    <About />
+    <Services client:visible />
+    <PremiumExperiences client:visible />
+    <WhyChoose />
+    <Benefits />
+    <Journey />
+    <Gallery client:visible />
+    <Testimonials />
+    <BookingPush />
+    <FAQ client:visible />
+    <Contact />
+  </main>
+  <Footer />
+  <StickyBookingDock client:load />
+</Layout>

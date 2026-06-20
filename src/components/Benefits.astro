@@ -1,0 +1,86 @@
+---
+const benefits = [
+  "Stress & anxiety relief",
+  "Deep muscle relaxation",
+  "Body fatigue & pain relief",
+  "Better sleep support",
+  "Improved mental clarity",
+  "Skin refresh via body scrub",
+  "Mind-body calmness",
+  "Premium self-care experience"
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative overflow-hidden">
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0A1F1C] rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 md:px-6 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      
+      <div class="lg:w-1/2">
+        <div class="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden">
+          <img 
+            src="/images/generated/body_scrub_therapy.png" 
+            alt="Wellness Benefits" 
+            class="w-full h-full object-cover benefit-img"
+          />
+          <div class="absolute inset-0 border-2 border-[#D4AF37]/20 rounded-[2rem] m-4 pointer-events-none"></div>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2">
+        <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">The Results</span>
+        <h2 class="text-3xl md:text-4xl font-serif text-[#FDFBF7] mb-8 leading-tight">
+          More than luxury. <br />
+          <span class="italic text-[#FDFBF7]/70">True wellness benefits.</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+          {benefits.map((benefit) => (
+            <div class="flex items-start gap-3 benefit-item opacity-0 transform translate-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="text-[#FDFBF7]/80 font-light">{benefit}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".benefit-item",
+      start: "top 80%",
+    }
+  });
+
+  tl.to(".benefit-item", {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: "power2.out"
+  });
+
+  gsap.fromTo(".benefit-img", 
+    { scale: 1.1 },
+    { 
+      scale: 1, 
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".benefit-img",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    }
+  );
+</script>

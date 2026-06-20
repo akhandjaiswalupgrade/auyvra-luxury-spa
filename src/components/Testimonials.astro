@@ -1,0 +1,63 @@
+---
+const testimonials = [
+  {
+    text: "Beautiful ambience, relaxing therapy, and a very premium experience. Perfect for stress relief after a long week.",
+    author: "Rahul S."
+  },
+  {
+    text: "One of the best luxury spa experiences in Hyderabad. The VIP room and steam session felt amazing and completely private.",
+    author: "Priya M."
+  },
+  {
+    text: "Loved the hammam experience. The whole place feels calm, clean, and premium. Highly recommend Auyvra.",
+    author: "Vikram K."
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Guest Experiences</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t, i) => (
+        <div class="glass-panel p-8 rounded-2xl relative testimonial-card">
+          <svg class="absolute top-6 right-6 w-8 h-8 text-[#D4AF37]/20" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1zM15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 17 16 17s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+          
+          <div class="flex gap-1 mb-6 text-[#D4AF37]">
+            {[1,2,3,4,5].map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            ))}
+          </div>
+          
+          <p class="text-[#FDFBF7]/80 font-light italic mb-6 leading-relaxed relative z-10">"{t.text}"</p>
+          <div class="text-[#D4AF37] font-medium tracking-wide uppercase text-sm">{t.author}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(".testimonial-card", 
+    { y: 30, opacity: 0 },
+    { 
+      y: 0, 
+      opacity: 1, 
+      duration: 0.8, 
+      stagger: 0.2, 
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".testimonial-card",
+        start: "top 85%",
+      }
+    }
+  );
+</script>

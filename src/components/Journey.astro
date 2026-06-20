@@ -1,0 +1,78 @@
+---
+import { siteConfig } from '../data/site';
+
+const steps = [
+  {
+    num: "01",
+    title: "Choose Therapy",
+    desc: "Browse our menu of traditional massages and VIP experiences."
+  },
+  {
+    num: "02",
+    title: "Book via WhatsApp",
+    desc: "Message us for quick slot confirmation and personalized advice."
+  },
+  {
+    num: "03",
+    title: "Visit Auyvra",
+    desc: "Arrive at our Moosapet location and enter a realm of calm."
+  },
+  {
+    num: "04",
+    title: "Relax & Renew",
+    desc: "Experience premium therapy and leave feeling completely refreshed."
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative border-y border-[#1a1a1a]">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Your Journey to Relaxation</h2>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Connecting Line (Desktop) -->
+      <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent -translate-y-1/2 z-0"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+        {steps.map((step) => (
+          <div class="flex flex-col items-center text-center group journey-step opacity-0 transform translate-y-8">
+            <div class="w-16 h-16 rounded-full bg-[#0a0a0a] border border-[#D4AF37]/30 flex items-center justify-center mb-6 group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all duration-500">
+              <span class="text-[#D4AF37] font-serif text-xl">{step.num}</span>
+            </div>
+            <h3 class="text-lg font-serif text-[#FDFBF7] mb-2">{step.title}</h3>
+            <p class="text-[#FDFBF7]/60 font-light text-sm px-2">
+              {step.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-[#D4AF37] text-[#0a0a0a] font-medium rounded-full hover:scale-105 transition-transform shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+        Start Your Wellness Journey
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".journey-step", {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "back.out(1.2)",
+    scrollTrigger: {
+      trigger: ".journey-step",
+      start: "top 80%",
+    }
+  });
+</script>

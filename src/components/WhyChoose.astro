@@ -1,0 +1,69 @@
+---
+const reasons = [
+  {
+    title: "Premium Luxury Ambience",
+    description: "Immerse yourself in a beautifully designed space with warm lighting and a tranquil atmosphere."
+  },
+  {
+    title: "Central Moosapet Location",
+    description: "Easily accessible, located on Green Hills Road, making your wellness journey convenient."
+  },
+  {
+    title: "VIP & VVIP Experiences",
+    description: "Exclusive rooms offering maximum privacy, including our Signature VIP Room and Royal Hammam."
+  },
+  {
+    title: "Hammam, Steam & Jacuzzi",
+    description: "Elevate your spa day with our specialized water and steam therapies for ultimate relaxation."
+  },
+  {
+    title: "Open Daily 10AM to 9PM",
+    description: "Flexible timings to suit your busy schedule, ensuring you can always find time for self-care."
+  },
+  {
+    title: "Easy WhatsApp Booking",
+    description: "Skip the hassle. Book your appointment, check slots, or ask questions instantly via WhatsApp."
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative border-t border-[#1a1a1a]">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Why Choose <span class="text-[#D4AF37]">Auyvra</span></h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {reasons.map((reason, i) => (
+        <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-500 group reason-card opacity-0">
+          <div class="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-6 border border-[#D4AF37]/20 group-hover:bg-[#D4AF37]/20 transition-colors">
+            <span class="text-[#D4AF37] font-serif text-xl">{i + 1}</span>
+          </div>
+          <h3 class="text-xl font-serif text-[#FDFBF7] mb-3">{reason.title}</h3>
+          <p class="text-[#FDFBF7]/60 font-light leading-relaxed text-sm">
+            {reason.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".reason-card", {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".reason-card",
+      start: "top 85%",
+    }
+  });
+</script>
