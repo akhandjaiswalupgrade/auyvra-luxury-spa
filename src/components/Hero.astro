@@ -2,13 +2,13 @@
 import { siteConfig } from '../data/site';
 ---
 
-<section class="relative min-h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden py-32" id="hero" style="perspective: 1000px;">
+<section class="relative h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden py-10 md:py-16" id="hero" style="perspective: 1000px;">
   
   <!-- Background Video with Parallax & 3D -->
-  <div class="absolute inset-0 w-full h-full transform-origin-bottom" id="hero-bg">
+  <div class="absolute inset-0 w-full h-full transform-origin-center" id="hero-bg">
     <video 
       src="/hero-bg.mp4" 
-      class="object-cover w-full h-full object-center scale-110"
+      class="object-cover w-full h-full object-center"
       autoplay
       loop
       muted
@@ -25,24 +25,24 @@ import { siteConfig } from '../data/site';
   </div>
 
   <!-- Content Container (Single Flex Column) -->
-  <div class="relative z-20 text-center px-4 md:px-6 w-full max-w-5xl mx-auto flex flex-col items-center justify-center gap-8 md:gap-10">
+  <div class="relative z-20 text-center px-4 md:px-6 w-full max-w-5xl mx-auto flex flex-col items-center justify-center gap-6 md:gap-8">
     
-    <div class="flex flex-col items-center justify-center gap-4">
+    <div class="flex flex-col items-center justify-center gap-3">
       <div class="overflow-hidden">
         <span class="block text-sm md:text-base tracking-[0.2em] text-[#D4AF37] uppercase font-medium hero-text">Welcome to Auyvra Luxury Spa</span>
       </div>
       
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-[#FDFBF7] max-w-4xl mx-auto leading-[1.1] tracking-tight hero-text">
+      <h1 class="text-3xl md:text-6xl lg:text-7xl font-serif text-[#FDFBF7] max-w-4xl mx-auto leading-[1.1] tracking-tight hero-text">
         Experience <span class="text-gradient-gold">Luxury Wellness</span> in the Heart of Hyderabad
       </h1>
       
-      <p class="text-lg md:text-xl text-[#FDFBF7]/80 max-w-2xl hero-text font-light mt-2 leading-snug">
+      <p class="text-sm md:text-xl text-[#FDFBF7]/80 max-w-2xl hero-text font-light mt-1 leading-snug">
         Auyvra Luxury Spa brings premium massage therapies, VIP spa rooms, hammam rituals, jacuzzi experiences, and deep relaxation together in one luxury wellness destination in Moosapet.
       </p>
     </div>
 
     <!-- Buttons Centered Row -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-text mt-4">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-text mt-2">
       <a 
         href={`https://wa.me/917386542499?text=Hi%20Auyvra%20Luxury%20Spa,%20I%20want%20to%20book%20an%20appointment.`}
         target="_blank"
@@ -62,7 +62,7 @@ import { siteConfig } from '../data/site';
     </div>
 
     <!-- Trust Badges -->
-    <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base text-[#FDFBF7]/60 font-light hero-text mt-4">
+    <div class="flex flex-wrap justify-center gap-4 md:gap-10 text-xs md:text-base text-[#FDFBF7]/60 font-light hero-text mt-2">
       <div class="flex items-center gap-2">
         <div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
         Premium Spa in Hyderabad
@@ -78,7 +78,7 @@ import { siteConfig } from '../data/site';
     </div>
     
     <!-- Scroll Indicator Centered -->
-    <div class="flex flex-col items-center gap-2 hero-text mt-8">
+    <div class="flex flex-col items-center gap-2 hero-text mt-4">
       <span class="text-[#D4AF37] text-xs font-medium tracking-[0.2em] uppercase">Scroll</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
         <path d="m6 9 6 6 6-6"/>
@@ -98,27 +98,24 @@ import { siteConfig } from '../data/site';
   const tl = gsap.timeline();
   
   tl.fromTo("#hero-bg", 
-    { scale: 1.1, filter: "blur(10px)" }, 
+    { scale: 1.02, filter: "blur(8px)" }, 
     { scale: 1, filter: "blur(0px)", duration: 2, ease: "power3.out" }
   )
   .fromTo(".hero-text", 
-    { y: 30, opacity: 0 }, 
-    { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: "power3.out" },
+    { y: 20, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out" },
     "-=1.2"
   );
 
-  // Parallax & 3D on scroll
+  // Fade out background on scroll
   gsap.to("#hero-bg", {
-    yPercent: 10,
-    rotateX: 10,
-    scale: 0.9,
-    opacity: 0.5,
+    opacity: 0.45,
     ease: "none",
     scrollTrigger: {
       trigger: "#hero",
       start: "top top",
       end: "bottom top",
-      scrub: 1 // smooth scrubbing
+      scrub: 1
     }
   });
 
