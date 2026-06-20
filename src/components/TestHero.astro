@@ -1,0 +1,299 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<section class="relative h-[90dvh] md:h-[88dvh] w-full flex flex-col items-center justify-start overflow-hidden pt-24 pb-8 md:pt-32 md:pb-12" id="hero" style="perspective: 1000px;">
+  
+  <!-- Background Video with Parallax & 3D -->
+  <div class="absolute inset-0 w-full h-full transform-origin-center" id="hero-bg">
+    <video 
+      src="/hero-bg.mp4" 
+      class="object-cover w-full h-full object-[center_30%]"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="/images/generated/hero_luxury_spa_hyderabad.png"
+    ></video>
+    <!-- Simple transparent black overlay for text readability -->
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+    
+    <!-- Flower Petals Shower Canvas Overlay -->
+    <canvas id="hero-petals-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-15"></canvas>
+  </div>
+
+  <!-- Mist overlay -->
+  <div class="absolute inset-0 z-20 opacity-30 pointer-events-none mix-blend-screen" id="mist-overlay">
+    <img src="/images/generated/abstract_mist_overlay.png" alt="" class="object-cover w-full h-full opacity-50" />
+  </div>
+
+  <!-- Content Container (Single Flex Column) -->
+  <div class="relative z-20 text-center px-4 md:px-6 w-full max-w-5xl mx-auto flex flex-col items-center justify-center gap-6 md:gap-8">
+    
+    <div class="flex flex-col items-center justify-center gap-3">
+      <div class="overflow-hidden">
+        <span class="block text-sm md:text-base tracking-[0.2em] text-[#D4AF37] uppercase font-medium hero-text" style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));">Welcome to Auyvra Luxury Spa</span>
+      </div>
+      
+      <h1 class="text-3xl md:text-6xl lg:text-7xl font-serif text-[#FDFBF7] max-w-4xl mx-auto leading-[1.1] tracking-tight hero-text" style="filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));">
+        Experience <span class="text-gradient-gold">Luxury Wellness</span> in the Heart of Hyderabad
+      </h1>
+      
+      <p class="text-sm md:text-xl text-[#FDFBF7]/80 max-w-2xl hero-text font-light mt-1 leading-snug" style="filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));">
+        Auyvra Luxury Spa brings premium massage therapies, VIP spa rooms, hammam rituals, jacuzzi experiences, and deep relaxation together in one luxury wellness destination in Moosapet.
+      </p>
+    </div>
+
+    <!-- Buttons Centered Row -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-text mt-2">
+      <a 
+        href={`https://wa.me/917386542499?text=Hi%20Auyvra%20Luxury%20Spa,%20I%20want%20to%20book%20an%20appointment.`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-button flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full bg-[#D4AF37] hover:bg-[#FDFBF7] text-[#0a0a0a] transition-all duration-300 transform hover:scale-105"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="font-medium tracking-wide text-sm md:text-base">Book on WhatsApp</span>
+      </a>
+
+      <a 
+        href={`tel:+917386542499`}
+        class="glass-button flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0a0a0a] transition-all duration-300 transform hover:scale-105"
+      >
+        <span class="font-medium tracking-wide text-sm md:text-base">Call Now</span>
+      </a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap justify-center gap-4 md:gap-10 text-xs md:text-base text-[#FDFBF7]/60 font-light hero-text mt-2">
+      <div class="flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+        Premium Spa in Hyderabad
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+        Moosapet Location
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+        VIP & VVIP Experiences
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator Centered -->
+    <div class="flex flex-col items-center gap-2 hero-text mt-4">
+      <span class="text-[#D4AF37] text-xs font-medium tracking-[0.2em] uppercase">Scroll</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initial Load Animation
+  const tl = gsap.timeline();
+  
+  tl.fromTo("#hero-bg", 
+    { scale: 1.02, filter: "blur(8px)" }, 
+    { scale: 1, filter: "blur(0px)", duration: 2, ease: "power3.out" }
+  )
+  .fromTo(".hero-text", 
+    { y: 20, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out" },
+    "-=1.2"
+  );
+
+  // Fade out background on scroll
+  gsap.to("#hero-bg", {
+    opacity: 0.45,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  });
+
+  // Mist animation (continuous subtle movement)
+  gsap.to("#mist-overlay", {
+    x: "-3%",
+    y: "3%",
+    scale: 1.05,
+    duration: 15,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+
+  // Programmatic play for the background video to prevent browser blocks or pauses
+  const video = document.querySelector('#hero-bg video') as HTMLVideoElement;
+  if (video) {
+    const playVideo = () => {
+      if (video.paused) {
+        video.play().catch(err => console.warn("Video play interrupted:", err));
+      }
+    };
+    
+    // Attempt playback on load
+    playVideo();
+
+    // Bind interaction fallback in case of block
+    const handleInteraction = () => {
+      playVideo();
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+    };
+
+    document.addEventListener('click', handleInteraction);
+    document.addEventListener('touchstart', handleInteraction);
+  }
+
+  // --- Flower and Petals Shower Canvas Implementation ---
+  const petalsCanvas = document.getElementById('hero-petals-canvas') as HTMLCanvasElement;
+  if (petalsCanvas) {
+    const petalsCtx = petalsCanvas.getContext('2d');
+    if (petalsCtx) {
+      let petalAnimationFrameId: number;
+      let petals: Petal[] = [];
+
+      const resizePetalsCanvas = () => {
+        petalsCanvas.width = petalsCanvas.parentElement?.clientWidth || window.innerWidth;
+        petalsCanvas.height = petalsCanvas.parentElement?.clientHeight || window.innerHeight;
+      };
+
+      const petalColors = [
+        { main: '#E25865', highlight: '#F48E9E', dark: '#9E1B2C' }, // Crimson Rose
+        { main: '#FDFBF7', highlight: '#FFFFFF', dark: '#E8E2D5' }, // Jasmine White
+        { main: '#D4AF37', highlight: '#F3E5AB', dark: '#B58F22' }, // Luxurious Gold
+        { main: '#EEA2AD', highlight: '#FFB7C5', dark: '#C46D76' }  // Pale Cherry Pink
+      ];
+
+      class Petal {
+        x: number;
+        y: number;
+        sizeX: number;
+        sizeY: number;
+        color: string;
+        colorHighlight: string;
+        colorDark: string;
+        speedY: number;
+        speedX: number;
+        swaySpeed: number;
+        swayAngle: number;
+        swayAngleSpeed: number;
+        rotation: number;
+        rotationSpeed: number;
+        spin: number;
+        spinSpeed: number;
+
+        constructor(isInitial = false) {
+          this.x = Math.random() * petalsCanvas.width;
+          // Span initially across height, otherwise spawn above screen
+          this.y = isInitial ? Math.random() * petalsCanvas.height : Math.random() * -100 - 20;
+          this.sizeX = Math.random() * 8 + 6;
+          this.sizeY = this.sizeX * (Math.random() * 0.4 + 1.1); // slightly elongated leaf
+          
+          const colorSet = petalColors[Math.floor(Math.random() * petalColors.length)];
+          this.color = colorSet.main;
+          this.colorHighlight = colorSet.highlight;
+          this.colorDark = colorSet.dark;
+
+          this.speedY = Math.random() * 1.2 + 0.9; // falling speed
+          this.speedX = Math.random() * 0.4 - 0.2;  // base wind offset
+          this.swaySpeed = Math.random() * 0.6 + 0.3; // sway amplitude
+          this.swayAngle = Math.random() * Math.PI * 2;
+          this.swayAngleSpeed = Math.random() * 0.02 + 0.01; // sway speed
+          
+          this.rotation = Math.random() * Math.PI * 2;
+          this.rotationSpeed = (Math.random() * 0.015 - 0.0075);
+          
+          this.spin = Math.random() * Math.PI * 2; // 3D spin angle
+          this.spinSpeed = Math.random() * 0.03 + 0.015;
+        }
+
+        update() {
+          this.y += this.speedY;
+          this.swayAngle += this.swayAngleSpeed;
+          this.x += this.speedX + Math.sin(this.swayAngle) * this.swaySpeed;
+          this.rotation += this.rotationSpeed;
+          this.spin += this.spinSpeed;
+
+          // Recycle petals that go off bottom or sides
+          if (this.y > petalsCanvas.height + 20 || this.x < -20 || this.x > petalsCanvas.width + 20) {
+            this.x = Math.random() * petalsCanvas.width;
+            this.y = Math.random() * -100 - 20;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.spin = Math.random() * Math.PI * 2;
+          }
+        }
+
+        draw() {
+          if (!petalsCtx) return;
+          petalsCtx.save();
+          petalsCtx.translate(this.x, this.y);
+          petalsCtx.rotate(this.rotation);
+
+          // 3D twist scale factor
+          const currentSizeX = this.sizeX * Math.sin(this.spin);
+
+          petalsCtx.beginPath();
+          // Draw leaf shape tip-to-tip
+          petalsCtx.moveTo(0, -this.sizeY);
+          petalsCtx.bezierCurveTo(-currentSizeX, -this.sizeY * 0.5, -currentSizeX, this.sizeY * 0.5, 0, this.sizeY);
+          petalsCtx.bezierCurveTo(currentSizeX, this.sizeY * 0.5, currentSizeX, -this.sizeY * 0.5, 0, -this.sizeY);
+
+          // Creased shading
+          const grad = petalsCtx.createLinearGradient(-currentSizeX, 0, currentSizeX, 0);
+          grad.addColorStop(0, this.color);
+          grad.addColorStop(0.4, this.colorHighlight);
+          grad.addColorStop(1, this.colorDark);
+
+          petalsCtx.fillStyle = grad;
+          
+          // Subtle drop shadow for satisfying depth
+          petalsCtx.shadowBlur = 4;
+          petalsCtx.shadowColor = 'rgba(0, 0, 0, 0.25)';
+          petalsCtx.fill();
+          
+          petalsCtx.restore();
+        }
+      }
+
+      const initPetals = () => {
+        petals = [];
+        const numPetals = Math.floor((petalsCanvas.width * petalsCanvas.height) / 18000);
+        // Spawn initial batch
+        for (let i = 0; i < numPetals; i++) {
+          petals.push(new Petal(true));
+        }
+      };
+
+      const animatePetals = () => {
+        petalsCtx.clearRect(0, 0, petalsCanvas.width, petalsCanvas.height);
+        petals.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        petalAnimationFrameId = requestAnimationFrame(animatePetals);
+      };
+
+      // Set size and animate
+      resizePetalsCanvas();
+      initPetals();
+      animatePetals();
+
+      window.addEventListener('resize', () => {
+        resizePetalsCanvas();
+        initPetals();
+      });
+    }
+  }
+</script>
