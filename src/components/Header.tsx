@@ -43,7 +43,13 @@ export default function Header() {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 relative z-[101]">
-            <img src="/images/logo.png" alt="Auyvra Luxury Spa" className="h-8 md:h-10 w-auto object-contain" />
+            <img 
+              src="/images/logo.png" 
+              alt="Auyvra Luxury Spa" 
+              className={`w-auto object-contain transition-all duration-300 ${
+                scrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'
+              }`} 
+            />
           </a>
 
           {/* Desktop Nav */}
