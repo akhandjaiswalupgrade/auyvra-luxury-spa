@@ -15,8 +15,8 @@ import { siteConfig } from '../data/site';
       playsinline
       poster="/images/generated/hero_luxury_spa_hyderabad.png"
     ></video>
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0A1F1C]/80 via-[#0a0a0a]/60 to-[#0a0a0a] z-10 mix-blend-multiply"></div>
-    <div class="absolute inset-0 bg-[#0a0a0a]/40 z-10"></div>
+    <!-- Very soft dark overlay just to maintain text readability while keeping the video highly visible and clear -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/30 via-transparent to-[#0a0a0a]/85 z-10"></div>
   </div>
 
   <!-- Mist overlay -->
@@ -132,4 +132,27 @@ import { siteConfig } from '../data/site';
     yoyo: true,
     ease: "sine.inOut"
   });
+
+  // Programmatic play for the background video to prevent browser blocks or pauses
+  const video = document.querySelector('#hero-bg video') as HTMLVideoElement;
+  if (video) {
+    const playVideo = () => {
+      if (video.paused) {
+        video.play().catch(err => console.warn("Video play interrupted:", err));
+      }
+    };
+    
+    // Attempt playback on load
+    playVideo();
+
+    // Bind interaction fallback in case of block
+    const handleInteraction = () => {
+      playVideo();
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+    };
+
+    document.addEventListener('click', handleInteraction);
+    document.addEventListener('touchstart', handleInteraction);
+  }
 </script>
