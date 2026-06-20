@@ -47,7 +47,7 @@ export default function Header() {
               src="/images/logo.png" 
               alt="Auyvra Luxury Spa" 
               className={`w-auto object-contain transition-all duration-300 ${
-                scrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'
+                scrolled ? 'h-14 md:h-20' : 'h-20 md:h-28'
               }`} 
             />
           </a>
