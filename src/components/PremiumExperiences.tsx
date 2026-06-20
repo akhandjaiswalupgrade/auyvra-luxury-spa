@@ -106,10 +106,10 @@ export default function PremiumExperiences() {
     <section ref={targetRef} class="py-16 md:py-24 bg-transparent overflow-hidden relative">
       <div class="container mx-auto px-4 md:px-6 mb-12 md:mb-20">
         <div class="max-w-3xl">
-          <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Exclusive</span>
-          <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Premium Experiences</h2>
+          <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Curated</span>
+          <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Luxury Spa Hyderabad Experiences</h2>
           <p class="text-lg text-[#FDFBF7]/70 font-light leading-relaxed">
-            For guests who want more than a regular spa session, Auyvra offers premium wellness rituals designed around privacy, comfort, steam, warmth, and indulgence.
+            For guests who seek more than a regular spa session, Auyvra offers premium body massage Hyderabad therapies and wellness experiences designed around privacy, comfort, relaxation, and indulgence.
           </p>
         </div>
       </div>
