@@ -73,7 +73,7 @@ function PremiumTiltCard({ exp, index }: { exp: any, index: number }) {
       </div>
       
       <div style={{ transform: "translateZ(40px)" }}>
-        <h3 class="text-xl md:text-2xl font-serif text-[#FDFBF7] mb-3 group-hover:text-[#D4AF37] transition-colors">{exp.title}</h3>
+        <h3 class="text-xl md:text-2xl font-serif text-[#FDFBF7] mb-3 group-hover:text-[#D4AF37] transition-colors leading-tight">{exp.title}</h3>
         <p class="text-sm md:text-base text-[#FDFBF7]/60 font-light leading-relaxed">
           {exp.description}
         </p>
@@ -97,7 +97,7 @@ export default function PremiumExperiences() {
       <div class="container mx-auto px-4 md:px-6 mb-12 md:mb-20">
         <div class="max-w-3xl">
           <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Curated</span>
-          <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Luxury Spa Hyderabad Experiences</h2>
+          <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6 leading-tight">Luxury Spa Hyderabad Experiences</h2>
           <p class="text-lg text-[#FDFBF7]/70 font-light leading-relaxed">
             For guests who seek more than a regular spa session, Auyvra offers premium body massage Hyderabad therapies and wellness experiences designed around privacy, comfort, relaxation, and indulgence.
           </p>

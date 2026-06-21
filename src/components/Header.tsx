@@ -67,7 +67,8 @@ export default function Header() {
               href={siteConfig.whatsappUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-2 border border-[#D4AF37] text-[#D4AF37] text-sm font-medium rounded-full hover:bg-[#D4AF37] hover:text-[#0a0a0a] transition-all"
+              className="px-6 py-2 bg-[#075E54] hover:bg-[#05433c] text-white text-sm font-medium rounded-full transition-all border border-transparent"
+              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}
             >
               Book Now
             </a>
@@ -119,7 +120,8 @@ export default function Header() {
                   href={siteConfig.whatsappUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full py-4 bg-[#D4AF37] text-[#0a0a0a] text-center font-medium rounded-full"
+                  className="w-full py-4 bg-[#075E54] hover:bg-[#05433c] text-white text-center font-medium rounded-full transition-colors"
+                  style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}
                 >
                   Book on WhatsApp
                 </a>

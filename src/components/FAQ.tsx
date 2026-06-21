@@ -41,7 +41,7 @@ export default function FAQ() {
       <div class="container mx-auto px-4 md:px-6 max-w-4xl">
         <div class="text-center mb-16">
           <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Answers</span>
-          <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7]">Frequently Asked Questions</h2>
+          <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] leading-tight">Frequently Asked Questions</h2>
         </div>
 
         <div class="space-y-4">
@@ -55,7 +55,7 @@ export default function FAQ() {
                 class="w-full text-left px-6 py-6 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
                 aria-expanded={openIndex === index}
               >
-                <span class="text-[#FDFBF7] font-medium pr-8">{faq.q}</span>
+                <span class="text-[#FDFBF7] font-medium pr-8 leading-snug">{faq.q}</span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
