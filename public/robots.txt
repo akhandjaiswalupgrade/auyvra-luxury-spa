@@ -4,4 +4,4 @@ Allow: /
 
 # Exclude search engines from following outbound link to mevryx.com (handled via rel="nofollow" attribute in the HTML footer link)
 
-Sitemap: https://auyvraspa.com/sitemap.xml
+Sitemap: https://www.auyvraluxuryspa.in/sitemap.xml

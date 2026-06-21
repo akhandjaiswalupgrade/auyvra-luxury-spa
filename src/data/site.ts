@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Auyvra Luxury Spa",
   description: "Experience premium massage therapies, VIP spa rooms, jacuzzi experiences, and deep relaxation in Moosapet, Hyderabad.",
-  url: "https://auyvraspa.com", // Placeholder
+  url: "https://www.auyvraluxuryspa.in",
   ogImage: "/images/generated/og_auyvra_luxury_spa.png",
   address: "First floor, Green Hills Rd, above Ratnadeep Supermarket, IV Phase, Sevalal Nagar, Moosapet, Hyderabad, Telangana 500018",
   phone: "+91 73865 42499",
