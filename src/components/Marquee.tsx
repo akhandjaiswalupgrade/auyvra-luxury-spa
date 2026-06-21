@@ -10,30 +10,30 @@ export default function Marquee() {
   const marqueeItems = [...serviceNames, ...serviceNames, ...serviceNames];
 
   return (
-    <div className="relative w-full py-5 bg-[#0a0a0a] border-y border-[#D4AF37]/15 overflow-hidden flex items-center z-30">
+    <div className="relative w-full py-4 bg-[#0a0a0a] border-y border-[#D4AF37]/20 overflow-hidden flex items-center z-30">
       
       {/* Fade Edges for premium look */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
 
       {/* Infinite Scroll Container */}
       <motion.div 
-        className="flex whitespace-nowrap items-center gap-4"
+        className="flex whitespace-nowrap items-center"
         animate={{ x: ["0%", "-33.333%"] }}
         transition={{ 
           repeat: Infinity, 
           ease: "linear", 
-          duration: 35 // Relaxing, premium scroll speed
+          duration: 30 // Slow, relaxing scroll
         }}
       >
         {marqueeItems.map((item, index) => (
-          <div key={index} className="flex items-center mx-2">
-            <div className="px-5 py-2.5 rounded-full border border-[#D4AF37]/15 bg-[#D4AF37]/5 backdrop-blur-md shadow-[0_4px_12px_rgba(0,0,0,0.5)] flex items-center gap-3">
-              <span className="text-[#D4AF37] text-xs font-semibold">✦</span>
-              <span className="text-[#FDFBF7]/90 font-sans text-xs md:text-sm tracking-widest uppercase font-medium">
-                {item}
-              </span>
-            </div>
+          <div key={index} className="flex items-center mx-6 md:mx-10">
+            <span className="text-[#FDFBF7]/70 font-serif text-lg md:text-xl tracking-wider uppercase">
+              {item}
+            </span>
+            <span className="text-[#D4AF37] ml-12 md:ml-20 text-xl">
+              ✦
+            </span>
           </div>
         ))}
       </motion.div>
