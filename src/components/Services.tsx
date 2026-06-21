@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 import { services, type ServiceCategory } from '../data/services';
 import { siteConfig } from '../data/site';
 
-const categories: ServiceCategory[] = ["All", "60 Min", "90 Min", "VIP", "Hammam", "Body Therapies"];
+const categories: ServiceCategory[] = ["All", "60 Min", "90 Min", "VIP", "Body Therapies"];
 
 // 3D Tilt Card Component
 function ServiceCard({ service }: { service: any }) {

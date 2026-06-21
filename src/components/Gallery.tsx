@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 
 const images = [
   { src: "/images/generated/vip_signature_room.png", alt: "VIP Signature Room", category: "VIP Room" },
-  { src: "/images/generated/hammam_ritual.png", alt: "Royal Hammam", category: "Hammam" },
+  { src: "/images/generated/body_scrub_therapy.png", alt: "Body Scrub Therapy", category: "Body Care" },
   { src: "/images/generated/massage_therapy.png", alt: "Massage Therapy", category: "Therapy" },
   { src: "/images/generated/jacuzzi_luxury_experience.png", alt: "Jacuzzi Experience", category: "Jacuzzi" },
   { src: "/images/generated/steam_vip_room.png", alt: "Steam Room", category: "Steam" },

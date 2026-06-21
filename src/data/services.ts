@@ -1,4 +1,4 @@
-export type ServiceCategory = "All" | "60 Min" | "90 Min" | "VIP" | "Hammam" | "Body Therapies";
+export type ServiceCategory = "All" | "60 Min" | "90 Min" | "VIP" | "Body Therapies";
 
 export interface Service {
   id: string;
@@ -75,28 +75,12 @@ export const services: Service[] = [
     image: "/images/generated/steam_vip_room.png",
   },
   {
-    id: "vvip-royal-hammam",
-    name: "VVIP Royal Hammam",
-    duration: "Premium",
-    category: ["All", "VIP", "Hammam"],
-    description: "Our most premium, opulent body cleansing and exfoliation ritual inside a heated marble hammam suite.",
-    image: "/images/generated/hammam_ritual.png",
-  },
-  {
     id: "royal-jacuzzi",
     name: "Royal Jacuzzi Massage",
     duration: "Premium",
     category: ["All", "VIP"],
     description: "Luxurious soak in our ambient private jacuzzi hydrotherapy pool, combined with a soothing body massage.",
     image: "/images/generated/jacuzzi_luxury_experience.png",
-  },
-  {
-    id: "turkish-arabian-hammam",
-    name: "Turkish Arabian Hammam",
-    duration: "Premium",
-    category: ["All", "Hammam"],
-    description: "Authentic mud, soap, and foam cleansing ritual rooted in middle-eastern bathhouse traditions.",
-    image: "/images/generated/turkish_hammam.png",
   },
   {
     id: "body-scrub",

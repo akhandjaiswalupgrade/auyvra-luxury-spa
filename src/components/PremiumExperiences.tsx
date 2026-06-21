@@ -3,11 +3,6 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'fram
 
 const premiumExperiences = [
   {
-    title: "VVIP Royal Hammam",
-    image: "/images/generated/hammam_ritual.png",
-    description: "An opulent cleansing and relaxation ritual in our luxury hammam suite."
-  },
-  {
     title: "VIP Signature Room with Steam",
     image: "/images/generated/steam_vip_room.png",
     description: "The ultimate privacy and relaxation, combining premium massage with a private steam session."
@@ -16,11 +11,6 @@ const premiumExperiences = [
     title: "Royal Jacuzzi Massage",
     image: "/images/generated/jacuzzi_luxury_experience.png",
     description: "Unwind in our warm, elegantly lit jacuzzi combined with soothing massage therapy."
-  },
-  {
-    title: "Turkish Arabian Hammam",
-    image: "/images/generated/hammam_ritual.png", // Reuse hammam
-    description: "Authentic Turkish and Arabian cleansing traditions for purified skin and relaxed muscles."
   },
   {
     title: "Candle Therapy Massage",

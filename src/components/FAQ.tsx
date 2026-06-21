@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "What massage services are available?",
-    a: "We offer Thai Massage, Aroma Massage, Swedish Massage, Deep Tissue Massage, Hot Oil Massage, Foot Reflexology, Balinese Massage, Thai Yoga Massage, Candle Therapy Massage, Hammam, Jacuzzi, Body Scrub Therapy, and VIP/VVIP spa experiences."
+    a: "We offer Thai Massage, Aroma Massage, Swedish Massage, Deep Tissue Massage, Hot Oil Massage, Foot Reflexology, Balinese Massage, Thai Yoga Massage, Candle Therapy Massage, Jacuzzi, Body Scrub Therapy, and VIP/VVIP spa experiences."
   },
   {
     q: "Are 60-minute and 90-minute sessions available?",
@@ -26,10 +26,6 @@ const faqs = [
   {
     q: "Is steam available?",
     a: "Yes, our VIP Signature Room with Steam is available for 90-minute sessions."
-  },
-  {
-    q: "Do you offer premium hammam services?",
-    a: "Yes, VVIP Royal Hammam and Turkish Arabian Hammam experiences are available."
   },
   {
     q: "Can I enquire before booking?",
