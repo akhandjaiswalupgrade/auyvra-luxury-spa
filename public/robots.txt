@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Exclude search engines from following outbound link to mevryx.com (handled via rel="nofollow" attribute in the HTML footer link)
+
+Sitemap: https://auyvraspa.com/sitemap.xml

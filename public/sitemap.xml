@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://auyvraspa.com/</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Logo -->
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/logo.png</image:loc>
+      <image:title>Auyvra Luxury Spa Logo</image:title>
+    </image:image>
+
+    <!-- Hero Image -->
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/hero_luxury_spa_hyderabad.png</image:loc>
+      <image:title>Best Spa in Hyderabad - Auyvra Luxury Spa</image:title>
+      <image:caption>Premium body massage and luxury wellness experiences in Moosapet, Hyderabad.</image:caption>
+    </image:image>
+
+    <!-- Services Images -->
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/thai_dry_massage.png</image:loc>
+      <image:title>Thai Dry Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Traditional dry massage using pressure points and stretching.</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/aroma_candle_therapy.png</image:loc>
+      <image:title>Aroma Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Gentle massage utilizing warm, premium essential oils.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/swedish_massage.png</image:loc>
+      <image:title>Swedish Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Classic relaxation massage using long, flowing strokes.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/deep_tissue_massage.png</image:loc>
+      <image:title>Deep Tissue Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Intense pressure therapy targeting deep muscle groups.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/hot_oil_massage.png</image:loc>
+      <image:title>Hot Oil Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Soothing massage using heated therapeutic oils.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/foot_reflexology.png</image:loc>
+      <image:title>Foot Reflexology - Auyvra Luxury Spa</image:title>
+      <image:caption>Targeted massage on reflex zones of the feet.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/vip_signature_room.png</image:loc>
+      <image:title>VIP Signature Room - Auyvra Luxury Spa</image:title>
+      <image:caption>Premium therapeutic body massage inside our exclusive VVIP signature room.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/steam_vip_room.png</image:loc>
+      <image:title>VIP Signature Room with Steam - Auyvra Luxury Spa</image:title>
+      <image:caption>Premium full-body therapy followed by a private steam room session.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/jacuzzi_luxury_experience.png</image:loc>
+      <image:title>Royal Jacuzzi Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Luxurious soak in our ambient private jacuzzi hydrotherapy pool.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/body_scrub_therapy.png</image:loc>
+      <image:title>Body Scrub Therapy - Auyvra Luxury Spa</image:title>
+      <image:caption>Natural exfoliating body scrub to buff away dry skin and reveal radiance.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/candle_massage.png</image:loc>
+      <image:title>Candle Therapy Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Warm, nourishing melted candle wax massaged smoothly into the skin.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/thai_yoga_massage.png</image:loc>
+      <image:title>Thai Yoga Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Dynamic active massage incorporating passive yoga stretching.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://auyvraspa.com/images/generated/balinese_massage.png</image:loc>
+      <image:title>Balinese Massage - Auyvra Luxury Spa</image:title>
+      <image:caption>Traditional Indonesian full-body treatment combining stretches and aromatherapy.</image:caption>
+    </image:image>
+
+  </url>
+</urlset>
