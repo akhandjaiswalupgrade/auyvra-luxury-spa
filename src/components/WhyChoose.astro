@@ -27,7 +27,7 @@ const reasons = [
 ];
 ---
 
-<section class="py-16 md:py-24 bg-transparent relative border-t border-[#1a1a1a]">
+<section class="py-16 md:py-24 bg-transparent relative border-t border-[#1a1a1a]" id="why-choose">
   <div class="container mx-auto px-4 md:px-6">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Why Choose <span class="text-[#D4AF37]">Auyvra</span></h2>
@@ -62,7 +62,7 @@ const reasons = [
     stagger: 0.1,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: ".reason-card",
+      trigger: "#why-choose",
       start: "top 85%",
     }
   });

@@ -2,7 +2,7 @@
 import { siteConfig } from '../data/site';
 ---
 
-<section class="relative py-20 md:py-32 bg-[#0a0a0a] overflow-hidden flex items-center justify-center">
+<section class="relative py-20 md:py-32 bg-[#0a0a0a] overflow-hidden flex items-center justify-center" id="booking-push">
   <!-- Background -->
   <div class="absolute inset-0 w-full h-full">
     <img 
@@ -78,7 +78,7 @@ import { siteConfig } from '../data/site';
     stagger: 0.2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".booking-content",
+      trigger: "#booking-push",
       start: "top 80%",
     }
   });

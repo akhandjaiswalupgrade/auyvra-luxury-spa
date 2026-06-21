@@ -15,7 +15,7 @@ const testimonials = [
 ];
 ---
 
-<section class="py-16 md:py-24 bg-transparent relative">
+<section class="py-16 md:py-24 bg-transparent relative" id="testimonials">
   <div class="container mx-auto px-4 md:px-6">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Guest Experiences</h2>
@@ -55,7 +55,7 @@ const testimonials = [
       stagger: 0.2, 
       ease: "power2.out",
       scrollTrigger: {
-        trigger: ".testimonial-card",
+        trigger: "#testimonials",
         start: "top 85%",
       }
     }

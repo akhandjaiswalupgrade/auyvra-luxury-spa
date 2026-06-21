@@ -25,7 +25,7 @@ const steps = [
 ];
 ---
 
-<section class="py-16 md:py-24 bg-transparent relative border-y border-[#1a1a1a]">
+<section class="py-16 md:py-24 bg-transparent relative border-y border-[#1a1a1a]" id="journey">
   <div class="container mx-auto px-4 md:px-6">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6">Your Journey to Relaxation</h2>
@@ -71,7 +71,7 @@ const steps = [
     stagger: 0.2,
     ease: "back.out(1.2)",
     scrollTrigger: {
-      trigger: ".journey-step",
+      trigger: "#journey",
       start: "top 80%",
     }
   });
