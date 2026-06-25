@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GlobalEffects from '../components/GlobalEffects.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout 
+  title="Privacy Policy | Auyvra Luxury Spa Hyderabad"
+  description="Privacy Policy for Auyvra Luxury Spa. Learn how we protect, collect, and use your personal information securely."
+>
+  <GlobalEffects />
+  <Header />
+  
+  <main class="relative bg-transparent z-10 pt-32 pb-24 md:pt-40 md:pb-32">
+    <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+      <!-- Title Page Header -->
+      <div class="text-center mb-16">
+        <span class="text-[#D4AF37] uppercase tracking-[0.25em] text-sm font-semibold block mb-4">Auyvra Luxury Spa</span>
+        <h1 class="text-4xl md:text-6xl font-serif text-[#FDFBF7] leading-tight mb-6">Privacy Policy</h1>
+        <div class="w-24 h-0.5 bg-[#D4AF37]/50 mx-auto mb-6"></div>
+        <p class="text-[#FDFBF7]/60 font-light text-base md:text-lg">Last Updated: June 26, 2026</p>
+      </div>
+
+      <!-- Content Block -->
+      <div class="glass-panel p-8 md:p-12 rounded-3xl border border-[#D4AF37]/15 bg-[#0a0a0a]/85 backdrop-blur-md shadow-2xl space-y-10 text-[#FDFBF7]/80 font-light leading-relaxed">
+        
+        <section class="space-y-4">
+          <p>
+            At <strong>Auyvra Luxury Spa</strong>, accessible from <a href="https://www.auyvraluxuryspa.in" class="text-[#D4AF37] hover:text-[#F3E5AB] font-medium transition-colors">www.auyvraluxuryspa.in</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Auyvra Luxury Spa and how we use it.
+          </p>
+          <p>
+            If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">1. Consent</h2>
+          <p>
+            By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">2. Information We Collect</h2>
+          <p>
+            The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
+          </p>
+          <p>
+            If you contact us directly or fill out our Booking Request Form, we may receive information such as your name, phone number, selected spa service, booking date, and any other details you choose to share with us.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">3. How We Use Your Information</h2>
+          <p>We use the information we collect in various ways, including to:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Provide, operate, and maintain our website.</li>
+            <li>Improve, personalize, and expand our website.</li>
+            <li>Understand and analyze how you use our website.</li>
+            <li>Process and schedule your spa appointments and booking requests.</li>
+            <li>Communicate with you (via phone, email, or WhatsApp) to confirm bookings, provide customer support, and share updates.</li>
+            <li>Send you email notifications regarding your submitted requests.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">4. Log Files & Analytics</h2>
+          <p>
+            Auyvra Luxury Spa follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">5. Third-Party Partners</h2>
+          <p>
+            We integrate with third-party services like Google Tag Manager (GTM) for analytics and traffic measurement. These third parties may use cookies, tracking technologies, or scripts to collect data on user interactions. We do not have access to or control over cookies used by third-party analytics scripts.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">6. Security of Your Information</h2>
+          <p>
+            We take reasonable physical and electronic measures to secure and protect your personal lead information. Lead forms are securely submitted to our backend and saved locally in secure settings. However, no data transmission over the internet can be guaranteed as 100% secure.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">7. Contact Us</h2>
+          <p>
+            If you have any questions or concerns regarding our Privacy Policy or data practices, please contact us at:
+          </p>
+          <p class="font-normal text-[#FDFBF7]">
+            <strong>Auyvra Luxury Spa</strong><br />
+            Address: {siteConfig.address}<br />
+            Phone: {siteConfig.phoneDisplay}
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollToTop />
+</Layout>

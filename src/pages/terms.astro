@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GlobalEffects from '../components/GlobalEffects.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout 
+  title="Terms of Service | Auyvra Luxury Spa Hyderabad"
+  description="Terms of Service for Auyvra Luxury Spa. Review our terms, guidelines, booking regulations, and policies."
+>
+  <GlobalEffects />
+  <Header />
+  
+  <main class="relative bg-transparent z-10 pt-32 pb-24 md:pt-40 md:pb-32">
+    <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+      <!-- Title Page Header -->
+      <div class="text-center mb-16">
+        <span class="text-[#D4AF37] uppercase tracking-[0.25em] text-sm font-semibold block mb-4">Auyvra Luxury Spa</span>
+        <h1 class="text-4xl md:text-6xl font-serif text-[#FDFBF7] leading-tight mb-6">Terms of Service</h1>
+        <div class="w-24 h-0.5 bg-[#D4AF37]/50 mx-auto mb-6"></div>
+        <p class="text-[#FDFBF7]/60 font-light text-base md:text-lg">Last Updated: June 26, 2026</p>
+      </div>
+
+      <!-- Content Block -->
+      <div class="glass-panel p-8 md:p-12 rounded-3xl border border-[#D4AF37]/15 bg-[#0a0a0a]/85 backdrop-blur-md shadow-2xl space-y-10 text-[#FDFBF7]/80 font-light leading-relaxed">
+        
+        <section class="space-y-4">
+          <p>
+            Welcome to <strong>Auyvra Luxury Spa</strong>. These Terms of Service govern your use of our website located at <a href="https://www.auyvraluxuryspa.in" class="text-[#D4AF37] hover:text-[#F3E5AB] font-medium transition-colors">www.auyvraluxuryspa.in</a> and the services provided at our physical spa center.
+          </p>
+          <p>
+            By accessing our website or booking a session with us, you agree to comply with and be bound by these terms. If you do not agree, please do not use our website or services.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">1. Booking & Cancellation Policy</h2>
+          <p>
+            We offer online booking requests via our website lead form, WhatsApp, and telephone.
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Appointments:</strong> All booking requests submitted via the website are subject to availability and final confirmation by our staff.</li>
+            <li><strong>Arrival:</strong> We recommend arriving 10-15 minutes prior to your scheduled session. Late arrivals may result in reduced treatment duration to avoid affecting subsequent bookings.</li>
+            <li><strong>Cancellations:</strong> If you need to cancel or reschedule, please notify us at least 2 hours in advance.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">2. Health & Safety Guidelines</h2>
+          <p>
+            Your health and safety are our utmost priority.
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Guests must disclose any pre-existing medical conditions, allergies, physical injuries, or pregnancy prior to the start of any therapy session.</li>
+            <li>Our therapists reserve the right to refuse service to anyone showing symptoms of contagious illnesses or skin conditions to protect all guests and staff.</li>
+            <li>All massage and spa treatments provided are strictly professional, therapeutic, and for relaxation purposes only. Any inappropriate behavior will result in immediate termination of the session without refund and potential legal actions.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">3. Intellectual Property</h2>
+          <p>
+            The content, images, graphics, logos, and layouts on this website are the property of Auyvra Luxury Spa and are protected by applicable trademark and copyright laws. You may not reproduce, copy, distribute, or use any portion of our site assets without written permission.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">4. Disclaimer & Limitation of Liability</h2>
+          <p>
+            The information on this website is provided on an "as is" and "as available" basis. While we strive for accuracy, we make no guarantees that the website content is completely free of errors or up to date.
+          </p>
+          <p>
+            Auyvra Luxury Spa and its therapists shall not be held liable for any injuries, losses, or damages resulting from undeclared medical conditions or physical sensitivities.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">5. Changes to These Terms</h2>
+          <p>
+            We reserve the right to modify or replace these Terms of Service at any time. Any changes will be posted on this page with an updated revision date.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">6. Governing Law</h2>
+          <p>
+            These terms shall be governed by and construed in accordance with the laws of Telangana, India. Any disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the courts in Hyderabad.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-serif text-[#FDFBF7] border-b border-[#D4AF37]/20 pb-2">7. Contact Information</h2>
+          <p>
+            For any queries or clarifications regarding our terms, please contact us at:
+          </p>
+          <p class="font-normal text-[#FDFBF7]">
+            <strong>Auyvra Luxury Spa</strong><br />
+            Address: {siteConfig.address}<br />
+            Phone: {siteConfig.phoneDisplay}
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollToTop />
+</Layout>

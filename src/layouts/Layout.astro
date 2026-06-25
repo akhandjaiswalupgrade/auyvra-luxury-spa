@@ -243,13 +243,20 @@ const faqSchema = {
         requestAnimationFrame(raf);
         
         // Fix anchor links for Lenis
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId && targetId !== '#') {
-              // Offset by -100px to account for the fixed header
-              lenis.scrollTo(targetId, { offset: -100, duration: 1.2 });
+            const href = this.getAttribute('href');
+            if (!href) return;
+            const isLocalAnchor = href.startsWith('#');
+            const isHomepageAnchor = href.startsWith('/#') && (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '');
+            
+            if (isLocalAnchor || isHomepageAnchor) {
+              e.preventDefault();
+              const targetId = isLocalAnchor ? href : href.substring(1);
+              if (targetId && targetId !== '#') {
+                // Offset by -100px to account for the fixed header
+                lenis.scrollTo(targetId, { offset: -100, duration: 1.2 });
+              }
             }
           });
         });
