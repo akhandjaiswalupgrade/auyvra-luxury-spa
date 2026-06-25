@@ -53,17 +53,20 @@ const reasons = [
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // Bypassed on mobile to optimize load times and TBT
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".reason-card", {
-    y: 0,
-    opacity: 1,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "#why-choose",
-      start: "top 85%",
-    }
-  });
+    gsap.to(".reason-card", {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#why-choose",
+        start: "top 85%",
+      }
+    });
+  }
 </script>

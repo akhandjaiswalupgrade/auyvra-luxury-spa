@@ -62,17 +62,20 @@ const steps = [
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // Bypassed on mobile to optimize load times and TBT
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".journey-step", {
-    y: 0,
-    opacity: 1,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "back.out(1.2)",
-    scrollTrigger: {
-      trigger: "#journey",
-      start: "top 80%",
-    }
-  });
+    gsap.to(".journey-step", {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "back.out(1.2)",
+      scrollTrigger: {
+        trigger: "#journey",
+        start: "top 80%",
+      }
+    });
+  }
 </script>

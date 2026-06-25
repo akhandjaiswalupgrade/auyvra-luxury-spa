@@ -58,28 +58,31 @@ import { siteConfig } from '../data/site';
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // Bypassed on mobile to optimize load times and TBT
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".booking-bg", {
-    yPercent: 20,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".booking-bg",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    }
-  });
+    gsap.to(".booking-bg", {
+      yPercent: 20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".booking-bg",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
 
-  gsap.to(".booking-content", {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    stagger: 0.2,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: "#booking-push",
-      start: "top 80%",
-    }
-  });
+    gsap.to(".booking-content", {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#booking-push",
+        start: "top 80%",
+      }
+    });
+  }
 </script>

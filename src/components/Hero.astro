@@ -100,41 +100,44 @@ import { siteConfig } from '../data/site';
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // Bypassed on mobile to optimize load times and TBT
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  // Initial Load Animation
-  const tl = gsap.timeline();
-  
-  tl.fromTo("#hero-bg", 
-    { scale: 1.02, filter: "blur(8px)" }, 
-    { scale: 1, filter: "blur(0px)", duration: 2, ease: "power3.out" }
-  )
-  .fromTo(".hero-text", 
-    { y: 20, opacity: 0 }, 
-    { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out" },
-    "-=1.2"
-  );
+    // Initial Load Animation
+    const tl = gsap.timeline();
+    
+    tl.fromTo("#hero-bg", 
+      { scale: 1.02, filter: "blur(8px)" }, 
+      { scale: 1, filter: "blur(0px)", duration: 2, ease: "power3.out" }
+    )
+    .fromTo(".hero-text", 
+      { y: 20, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out" },
+      "-=1.2"
+    );
 
-  // Fade out background on scroll
-  gsap.to("#hero-bg", {
-    opacity: 0.45,
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1
-    }
-  });
+    // Fade out background on scroll
+    gsap.to("#hero-bg", {
+      opacity: 0.45,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    });
 
-  // Mist animation (continuous subtle movement)
-  gsap.to("#mist-overlay", {
-    x: "-3%",
-    y: "3%",
-    scale: 1.05,
-    duration: 15,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut"
-  });
+    // Mist animation (continuous subtle movement)
+    gsap.to("#mist-overlay", {
+      x: "-3%",
+      y: "3%",
+      scale: 1.05,
+      duration: 15,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  }
 </script>

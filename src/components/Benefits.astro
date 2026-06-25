@@ -53,34 +53,37 @@ const benefits = [
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // Bypassed on mobile to optimize load times and TBT
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#benefits",
-      start: "top 80%",
-    }
-  });
-
-  tl.to(".benefit-item", {
-    x: 0,
-    opacity: 1,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: "power2.out"
-  });
-
-  gsap.fromTo(".benefit-img", 
-    { scale: 1.1 },
-    { 
-      scale: 1, 
-      ease: "none",
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".benefit-img",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
+        trigger: "#benefits",
+        start: "top 80%",
       }
-    }
-  );
+    });
+
+    tl.to(".benefit-item", {
+      x: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power2.out"
+    });
+
+    gsap.fromTo(".benefit-img", 
+      { scale: 1.1 },
+      { 
+        scale: 1, 
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".benefit-img",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      }
+    );
+  }
 </script>

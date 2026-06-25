@@ -74,3 +74,17 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+/* Mobile Animation Fallback: prevent initial opacity-0 or transform states on mobile viewports since GSAP is bypassed */
+@media (max-width: 767px) {
+  .benefit-item,
+  .booking-content,
+  .gallery-tile,
+  .journey-step,
+  .reason-card,
+  .about-content > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

@@ -38,20 +38,23 @@
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  // Bypassed on mobile to optimize load times and TBT
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.fromTo(".about-content > *", 
-    { y: 50, opacity: 0 },
-    { 
-      y: 0, 
-      opacity: 1, 
-      duration: 1, 
-      stagger: 0.2, 
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 75%",
+    gsap.fromTo(".about-content > *", 
+      { y: 50, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        stagger: 0.2, 
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 75%",
+        }
       }
-    }
-  );
+    );
+  }
 </script>
