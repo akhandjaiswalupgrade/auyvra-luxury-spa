@@ -1,0 +1,40 @@
+---
+const areas = [
+  "Moosapet",
+  "Kukatpally",
+  "Bharat Nagar",
+  "Erragadda",
+  "Ameerpet",
+  "SR Nagar",
+  "Miyapur",
+  "Hitech City"
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative border-t border-[#1a1a1a]" id="areas-serve">
+  <div class="absolute inset-0 pointer-events-none opacity-10">
+    <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[#0A1F1C] rounded-full blur-[120px]"></div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-8 leading-tight">
+        Areas We Serve Across <span class="text-gradient-gold">Hyderabad</span>
+      </h2>
+      
+      <p class="text-base md:text-lg text-[#FDFBF7]/75 font-light leading-relaxed mb-12 max-w-3xl mx-auto">
+        We welcome guests from Moosapet, Kukatpally, Bharat Nagar, Erragadda, Ameerpet, SR Nagar, Miyapur, Hitech City and nearby Hyderabad locations. If you are searching for a luxury spa near me, massage center near me or full body massage near me, Auyvra Spa is easily accessible from all major areas nearby.
+      </p>
+
+      <!-- Styled list of areas with gold pills -->
+      <div class="flex flex-wrap justify-center gap-3.5 max-w-3xl mx-auto">
+        {areas.map((area) => (
+          <div class="px-5 py-3 rounded-full border border-[#D4AF37]/15 bg-[#D4AF37]/5 backdrop-blur-sm text-sm text-[#FDFBF7]/90 font-medium hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/10 hover:scale-105 transition-all duration-300 select-none cursor-default flex items-center gap-2">
+            <span class="text-[#D4AF37]">✦</span>
+            {area}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
