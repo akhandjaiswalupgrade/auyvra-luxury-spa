@@ -11,12 +11,12 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
 const ogImageURL = new URL(siteConfig.ogImage, siteConfig.url);
 
-const schema = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
+  "@type": "LocalBusiness",
+  "@id": `${siteConfig.url}/#localbusiness`,
   "name": siteConfig.name,
-  "image": ogImageURL,
-  "@id": siteConfig.url,
+  "image": ogImageURL.href,
   "url": siteConfig.url,
   "telephone": siteConfig.phone,
   "priceRange": "$$",
@@ -28,6 +28,12 @@ const schema = {
     "postalCode": "500018",
     "addressCountry": "IN"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.4684979,
+    "longitude": 78.4136835
+  },
+  "hasMap": siteConfig.mapsUrl,
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": [
@@ -42,6 +48,100 @@ const schema = {
     "opens": "10:00",
     "closes": "21:00"
   }
+};
+
+const spaSchema = {
+  "@context": "https://schema.org",
+  "@type": "SpaOrHealthClub",
+  "@id": `${siteConfig.url}/#spaorhealthclub`,
+  "name": siteConfig.name,
+  "image": ogImageURL.href,
+  "url": siteConfig.url,
+  "telephone": siteConfig.phone,
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "First floor, Green Hills Rd, above Ratnadeep Supermarket, IV Phase, Sevalal Nagar",
+    "addressLocality": "Moosapet, Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500018",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.4684979,
+    "longitude": 78.4136835
+  },
+  "hasMap": siteConfig.mapsUrl,
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "21:00"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which is the best spa in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auyvra Spa offers premium wellness therapies, luxury spa treatments and full body massage services designed to provide complete relaxation and rejuvenation in a comfortable and professional environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide full body massage in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer professional full body massage therapies along with a variety of wellness and relaxation treatments designed to reduce stress, improve comfort and support overall wellbeing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find a luxury spa near me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auyvra Spa is conveniently located in Hyderabad and easily accessible from Moosapet, Kukatpally, Erragadda, Bharat Nagar, Ameerpet, SR Nagar and nearby locations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is your massage center near Kukatpally and Moosapet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our spa is conveniently located for guests visiting from Kukatpally, Moosapet and surrounding Hyderabad areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What spa and massage services do you offer in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer full body massage, aroma therapy, wellness treatments and luxury spa experiences tailored to individual relaxation and rejuvenation needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you accept same-day spa bookings in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Subject to availability, we welcome same-day appointments and advance bookings through phone and WhatsApp."
+      }
+    }
+  ]
 };
 ---
 
@@ -108,7 +208,9 @@ const schema = {
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Schema Markup -->
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(spaSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
   <body class="bg-[#0a0a0a] text-[#FDFBF7] antialiased selection:bg-[#D4AF37] selection:text-[#0a0a0a]">
     <!-- Google Tag Manager (noscript) -->
