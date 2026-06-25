@@ -4,22 +4,26 @@ import { siteConfig } from '../data/site';
 
 <section class="relative min-h-[100dvh] w-full flex flex-col items-center justify-start overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24" id="hero" style="perspective: 1000px;">
   
-  <!-- Background Image with Parallax & 3D (LCP Optimized) -->
+  <!-- Background Image with Parallax & 3D (LCP Optimized with Responsive WebP) -->
   <div class="absolute inset-0 w-full h-full transform-origin-center z-0" id="hero-bg">
-    <img 
-      src="/images/generated/hero_luxury_spa_hyderabad.png" 
-      alt="Auyvra Luxury Spa Hyderabad Background" 
-      class="object-cover w-full h-full object-[center_30%]"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <picture>
+      <source srcset="/images/generated/hero_luxury_spa_hyderabad_mobile.webp" media="(max-width: 768px)" type="image/webp" />
+      <source srcset="/images/generated/hero_luxury_spa_hyderabad.webp" type="image/webp" />
+      <img 
+        src="/images/generated/hero_luxury_spa_hyderabad.png" 
+        alt="Auyvra Luxury Spa Hyderabad Background" 
+        class="object-cover w-full h-full object-[center_30%]"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
     <!-- Simple transparent black overlay for text readability, slightly darker on mobile -->
     <div class="absolute inset-0 bg-black/45 md:bg-black/35 z-10"></div>
   </div>
 
-  <!-- Mist overlay -->
+  <!-- Mist overlay (Optimized WebP) -->
   <div class="absolute inset-0 z-10 opacity-30 pointer-events-none mix-blend-screen" id="mist-overlay">
-    <img src="/images/generated/abstract_mist_overlay.png" alt="" class="object-cover w-full h-full opacity-50" />
+    <img src="/images/generated/abstract_mist_overlay.webp" alt="" class="object-cover w-full h-full opacity-50" />
   </div>
 
   <!-- Content Container (Single Flex Column) -->
