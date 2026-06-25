@@ -6,26 +6,23 @@ import { siteConfig } from '../data/site';
   
   <!-- Background Video with Parallax & 3D -->
   <div class="absolute inset-0 w-full h-full transform-origin-center z-0" id="hero-bg">
-    <!-- Desktop Background Video -->
+    <!-- Dynamic Background Video (loads only mobile OR desktop version to save network bandwidth) -->
     <video 
-      src="/hero-bg.mp4" 
-      class="hidden md:block object-cover w-full h-full object-[center_30%]"
+      id="hero-video-bg"
+      class="object-cover w-full h-full object-[center_30%]"
       autoplay
       loop
       muted
       playsinline
       poster="/images/generated/hero_luxury_spa_hyderabad.png"
     ></video>
-    <!-- Mobile Background Video -->
-    <video 
-      src="/hero-bg-mobile.mp4" 
-      class="block md:hidden object-cover w-full h-full object-[center_30%]"
-      autoplay
-      loop
-      muted
-      playsinline
-      poster="/images/generated/hero_luxury_spa_hyderabad.png"
-    ></video>
+    <script is:inline>
+      const vEl = document.getElementById('hero-video-bg');
+      if (vEl) {
+        const isMob = window.innerWidth < 768;
+        vEl.src = isMob ? '/hero-bg-mobile.mp4' : '/hero-bg.mp4';
+      }
+    </script>
     <!-- Simple transparent black overlay for text readability, slightly darker on mobile -->
     <div class="absolute inset-0 bg-black/45 md:bg-black/35 z-10"></div>
   </div>
