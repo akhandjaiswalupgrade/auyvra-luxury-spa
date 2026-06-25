@@ -1,0 +1,153 @@
+---
+import { services } from '../data/services';
+
+const categories = ["All", "60 Min", "90 Min", "VIP", "Body Therapies"];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative" id="services">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-16">
+      <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Our Therapies</span>
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] leading-tight">Premium Spa Services</h2>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-16">
+      {categories.map((category) => (
+        <button
+          class={`filter-tab px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+            category === "All" 
+              ? 'bg-[#D4AF37] text-[#0a0a0a]' 
+              : 'bg-transparent border border-[#333] text-[#FDFBF7]/70 hover:border-[#D4AF37]/50 hover:text-[#D4AF37]'
+          }`}
+          data-category={category}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <!-- Services Grid -->
+    <div 
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      id="services-grid"
+    >
+      {services.map((service) => (
+        <div
+          class="service-card group relative bg-[#121212] rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/50 transition-all duration-500 cursor-pointer ease-out"
+          style="transform-style: preserve-3d; transition: transform 0.1s ease-out, border-color 0.3s ease, opacity 0.4s ease, transform 0.4s ease;"
+          data-categories={JSON.stringify(service.category)}
+        >
+          <div class="aspect-[4/3] w-full overflow-hidden relative pointer-events-none">
+            <img 
+              src={service.image} 
+              alt={service.name}
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out opacity-80 group-hover:opacity-100"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/50 to-transparent"></div>
+            
+            <!-- Category Badge -->
+            <div class="absolute top-4 left-4 flex gap-2">
+              {service.category.filter(c => c !== "All").slice(0, 1).map(cat => (
+                <span class="glass-panel px-3 py-1 rounded-full text-xs font-medium text-[#FDFBF7]/90 uppercase tracking-wider">
+                  {cat}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="p-6 relative z-10 -mt-8 pointer-events-auto">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-serif text-[#FDFBF7] group-hover:text-[#D4AF37] transition-colors leading-tight">{service.name}</h3>
+              {service.duration && (
+                <span class="text-sm text-[#D4AF37] font-medium shrink-0 ml-2">{service.duration}</span>
+              )}
+            </div>
+            <p class="text-[#FDFBF7]/60 text-sm font-light leading-relaxed mb-6">
+              {service.description}
+            </p>
+            
+            <a 
+              href={`https://wa.me/917386542499?text=Hi%20Auyvra%20Luxury%20Spa%2C%20I%20want%20to%20enquire%20about%20${encodeURIComponent(service.name)}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-[#075E54] hover:bg-[#05433c] text-white transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_15px_rgba(7,94,84,0.2)] text-xs font-semibold uppercase tracking-wider"
+              style="text-shadow: 0 1px 2px rgba(0,0,0,0.8);"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="relative z-10"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Book on WhatsApp
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Services filtering
+  const tabs = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.service-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const activeCategory = tab.getAttribute('data-category');
+      
+      // Update tab styles
+      tabs.forEach(t => {
+        t.classList.remove('bg-[#D4AF37]', 'text-[#0a0a0a]');
+        t.classList.add('bg-transparent', 'border', 'border-[#333]', 'text-[#FDFBF7]/70', 'hover:border-[#D4AF37]/50', 'hover:text-[#D4AF37]');
+      });
+      tab.classList.add('bg-[#D4AF37]', 'text-[#0a0a0a]');
+      tab.classList.remove('bg-transparent', 'border', 'border-[#333]', 'text-[#FDFBF7]/70', 'hover:border-[#D4AF37]/50', 'hover:text-[#D4AF37]');
+
+      // Filter cards
+      cards.forEach(card => {
+        const categories = JSON.parse(card.getAttribute('data-categories') || '[]');
+        const isMatched = categories.includes(activeCategory);
+        
+        const cardEl = card as HTMLElement;
+        if (isMatched) {
+          cardEl.style.display = 'block';
+          // Force layout refresh for transition
+          void cardEl.offsetWidth;
+          cardEl.style.opacity = '1';
+          cardEl.style.transform = 'scale(1)';
+        } else {
+          cardEl.style.opacity = '0';
+          cardEl.style.transform = 'scale(0.95)';
+          // Wait for transition to complete before setting display none
+          setTimeout(() => {
+            if (cardEl.style.opacity === '0') {
+              cardEl.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // 3D Card tilt effect (Only on desktop for performance)
+  if (window.innerWidth >= 1024) {
+    cards.forEach(card => {
+      const cardEl = card as HTMLElement;
+      
+      cardEl.addEventListener('mousemove', (e) => {
+        const rect = cardEl.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xPct = x / rect.width - 0.5;
+        const yPct = y / rect.height - 0.5;
+        
+        const rotX = yPct * -15; // 7.5deg max tilt
+        const rotY = xPct * 15; // 7.5deg max tilt
+        
+        cardEl.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      
+      cardEl.addEventListener('mouseleave', () => {
+        cardEl.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    });
+  }
+</script>

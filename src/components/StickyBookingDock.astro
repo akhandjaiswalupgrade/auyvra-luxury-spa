@@ -1,0 +1,103 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<div 
+  id="sticky-booking-dock"
+  class="fixed bottom-0 md:bottom-8 left-0 md:left-1/2 z-50 w-full md:w-[95%] md:max-w-3xl pb-[env(safe-area-inset-bottom)] md:pb-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-full md:translate-y-[calc(100%+2rem)] md:-translate-x-1/2 opacity-0 pointer-events-none"
+>
+  <div class="glass-panel md:rounded-2xl rounded-t-3xl border-t md:border border-[#D4AF37]/20 bg-[#0a0a0a]/80 backdrop-blur-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)] md:shadow-[0_20px_40px_rgba(0,0,0,0.7)] overflow-hidden">
+    
+    <div class="grid grid-cols-4 divide-x divide-[#D4AF37]/10">
+      
+      <!-- Call Us -->
+      <a
+        href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}
+        class="group flex flex-col items-center justify-center py-4 md:py-5 px-2 relative transition-all duration-300 hover:bg-[#D4AF37]/5"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        <div class="mb-2 text-[#D4AF37] group-hover:text-[#FDFBF7] drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] transition-colors duration-300 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <span class="text-[10px] md:text-xs font-medium text-[#FDFBF7]/70 group-hover:text-[#FDFBF7] tracking-wider uppercase text-center transition-colors duration-300">
+          Call Us
+        </span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a
+        href={siteConfig.whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex flex-col items-center justify-center py-4 md:py-5 px-2 relative transition-all duration-300 hover:bg-[#D4AF37]/5"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        <div class="mb-2 text-[#25D366] group-hover:text-[#28F172] transition-colors duration-300 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.48 4.832 1.48 5.176 0 9.387-4.208 9.39-9.386.002-2.509-.974-4.866-2.748-6.64-1.77-1.776-4.127-2.753-6.637-2.754-5.183 0-9.395 4.209-9.399 9.391-.001 1.623.42 3.202 1.22 4.606l-.993 3.628 3.735-.98zm11.117-6.425c-.299-.149-1.773-.875-2.046-.975-.275-.1-.475-.149-.675.15-.2.299-.774.975-.95 1.174-.175.2-.35.224-.65.074-1.86-.93-2.934-1.614-4.103-3.62-.3-.516.3-.479.858-1.597.09-.18.045-.337-.023-.487-.067-.15-.575-1.387-.787-1.9-.207-.5-.436-.433-.6-.442l-.51-.009c-.175 0-.46.065-.7.325-.24.26-1.127 1.102-1.127 2.686 0 1.584 1.152 3.118 1.31 3.328.16.208 2.266 3.46 5.49 4.856.766.332 1.364.53 1.83.678.77.244 1.47.21 2.025.127.619-.092 1.773-.724 2.023-1.424.25-.699.25-1.3.175-1.424-.075-.125-.275-.199-.575-.349z"/>
+          </svg>
+        </div>
+        <span class="text-[10px] md:text-xs font-medium text-[#FDFBF7]/70 group-hover:text-[#FDFBF7] tracking-wider uppercase text-center transition-colors duration-300">
+          WhatsApp
+        </span>
+      </a>
+
+      <!-- Directions -->
+      <a
+        href={siteConfig.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex flex-col items-center justify-center py-4 md:py-5 px-2 relative transition-all duration-300 hover:bg-[#D4AF37]/5"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        <div class="mb-2 text-[#D4AF37] group-hover:text-[#FDFBF7] drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] transition-colors duration-300 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <span class="text-[10px] md:text-xs font-medium text-[#FDFBF7]/70 group-hover:text-[#FDFBF7] tracking-wider uppercase text-center transition-colors duration-300">
+          Directions
+        </span>
+      </a>
+
+      <!-- Services -->
+      <a
+        href="#services"
+        class="group flex flex-col items-center justify-center py-4 md:py-5 px-2 relative transition-all duration-300 hover:bg-[#D4AF37]/5"
+      >
+        <div class="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        <div class="mb-2 text-[#D4AF37] group-hover:text-[#FDFBF7] drop-shadow-[0_0_8px_rgba(212,175,55,0.3)] transition-colors duration-300 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.912 5.886H3.82l4.912 3.57L6.82 18.342 12 14.772l5.18 3.57-1.912-5.886 4.912-3.57h-6.268Z"/>
+          </svg>
+        </div>
+        <span class="text-[10px] md:text-xs font-medium text-[#FDFBF7]/70 group-hover:text-[#FDFBF7] tracking-wider uppercase text-center transition-colors duration-300">
+          Services
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const dock = document.getElementById('sticky-booking-dock');
+  
+  const handleScroll = () => {
+    const threshold = window.innerHeight * 0.5; // Show after scrolling past 50% of Hero
+    if (window.scrollY > threshold) {
+      dock?.classList.remove('translate-y-full', 'md:translate-y-[calc(100%+2rem)]', 'opacity-0', 'pointer-events-none');
+      dock?.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    } else {
+      dock?.classList.add('translate-y-full', 'md:translate-y-[calc(100%+2rem)]', 'opacity-0', 'pointer-events-none');
+      dock?.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Initial check
+</script>

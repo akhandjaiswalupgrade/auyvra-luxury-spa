@@ -1,0 +1,37 @@
+---
+import { services } from '../data/services';
+
+const serviceNames = services.map(s => s.name);
+const marqueeItems = [...serviceNames, ...serviceNames, ...serviceNames];
+---
+
+<div class="relative w-full py-4 bg-[#0a0a0a] border-y border-[#D4AF37]/20 overflow-hidden flex items-center z-30">
+  <!-- Fade Edges for premium look -->
+  <div class="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Infinite Scroll Container (GPU-Accelerated CSS) -->
+  <div class="flex whitespace-nowrap items-center animate-marquee">
+    {marqueeItems.map((item) => (
+      <div class="flex items-center mx-6 md:mx-10 shrink-0">
+        <span class="text-[#FDFBF7]/70 font-serif text-lg md:text-xl tracking-wider uppercase">
+          {item}
+        </span>
+        <span class="text-[#D4AF37] ml-12 md:ml-20 text-xl">
+          ✦
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-33.333%, 0, 0); }
+  }
+  .animate-marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+  }
+</style>

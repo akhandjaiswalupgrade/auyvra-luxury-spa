@@ -1,0 +1,108 @@
+---
+const premiumExperiences = [
+  {
+    title: "VIP Signature Room with Steam",
+    image: "/images/generated/steam_vip_room.png",
+    description: "The ultimate privacy and relaxation, combining premium massage with a private steam session."
+  },
+  {
+    title: "Royal Jacuzzi Massage",
+    image: "/images/generated/jacuzzi_luxury_experience.png",
+    description: "Unwind in our warm, elegantly lit jacuzzi combined with soothing massage therapy."
+  },
+  {
+    title: "Candle Therapy Massage",
+    image: "/images/generated/aroma_candle_therapy.png",
+    description: "Warm, melted massage candle wax applied smoothly for deep hydration and comfort."
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent overflow-hidden relative" id="premium-experiences">
+  <div class="container mx-auto px-4 md:px-6 mb-12 md:mb-20">
+    <div class="max-w-3xl">
+      <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Curated</span>
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6 leading-tight">Luxury Spa Hyderabad Experiences</h2>
+      <p class="text-lg text-[#FDFBF7]/70 font-light leading-relaxed">
+        For guests who seek more than a regular spa session, Auyvra offers premium body massage Hyderabad therapies and wellness experiences designed around privacy, comfort, relaxation, and indulgence.
+      </p>
+    </div>
+  </div>
+
+  <!-- Horizontal Scroll Area / Carousel (GPU Accelerated CSS Snap) -->
+  <div class="pl-4 md:pl-6 overflow-x-auto pb-12 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory scroll-smooth">
+    <div class="flex gap-6 md:gap-8 w-max pr-6 py-10 px-4">
+      {premiumExperiences.map((exp, index) => (
+        <div 
+          class="premium-card w-[85vw] md:w-[450px] max-w-[320px] md:max-w-none group relative snap-center cursor-pointer transition-all duration-300"
+          style="transform-style: preserve-3d; transition: transform 0.1s ease-out;"
+        >
+          <div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+            
+            <!-- Image -->
+            <img 
+              src={exp.image} 
+              alt={exp.title}
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+              loading="lazy"
+            />
+            
+            <!-- Gold border on hover -->
+            <div class="absolute inset-0 border-2 border-[#D4AF37]/0 group-hover:border-[#D4AF37]/30 rounded-2xl transition-colors duration-500 z-20 pointer-events-none"></div>
+          </div>
+          
+          <div class="pointer-events-none">
+            <h3 class="text-xl md:text-2xl font-serif text-[#FDFBF7] mb-3 group-hover:text-[#D4AF37] transition-colors leading-tight">{exp.title}</h3>
+            <p class="text-sm md:text-base text-[#FDFBF7]/60 font-light leading-relaxed">
+              {exp.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <div class="container mx-auto px-4 md:px-6 mt-8 flex justify-center md:justify-start">
+     <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-[#D4AF37] text-[#D4AF37] rounded-full font-medium hover:bg-[#D4AF37] hover:text-[#0a0a0a] transition-all">
+      Explore All Services
+    </a>
+  </div>
+</section>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  // 3D Card tilt effect (Only on desktop for performance)
+  if (window.innerWidth >= 1024) {
+    const cards = document.querySelectorAll('.premium-card');
+    cards.forEach(card => {
+      const cardEl = card as HTMLElement;
+      
+      cardEl.addEventListener('mousemove', (e) => {
+        const rect = cardEl.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xPct = x / rect.width - 0.5;
+        const yPct = y / rect.height - 0.5;
+        
+        const rotX = yPct * -10; // 5deg max tilt
+        const rotY = xPct * 10; // 5deg max tilt
+        
+        cardEl.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.01, 1.01, 1.01)`;
+      });
+      
+      cardEl.addEventListener('mouseleave', () => {
+        cardEl.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    });
+  }
+</script>

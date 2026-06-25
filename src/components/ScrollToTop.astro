@@ -1,0 +1,45 @@
+<button
+  id="scroll-to-top-btn"
+  class="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-45 p-3.5 rounded-full bg-[#0a0a0a]/80 border border-[#D4AF37]/30 text-[#D4AF37] hover:text-[#0a0a0a] hover:bg-[#D4AF37] hover:border-[#D4AF37] shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-300 backdrop-blur-md focus:outline-none hover:scale-110 active:scale-95 transform scale-50 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="2.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  >
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+</button>
+
+<script>
+  const scrollBtn = document.getElementById('scroll-to-top-btn');
+
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      scrollBtn?.classList.remove('scale-50', 'opacity-0', 'pointer-events-none');
+      scrollBtn?.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+    } else {
+      scrollBtn?.classList.add('scale-50', 'opacity-0', 'pointer-events-none');
+      scrollBtn?.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  scrollBtn?.addEventListener('click', scrollToTop);
+  
+  handleScroll(); // Initial check
+</script>

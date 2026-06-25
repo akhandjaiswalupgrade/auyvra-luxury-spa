@@ -2,46 +2,46 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
-import Services from '../components/Services';
-import PremiumExperiences from '../components/PremiumExperiences';
+import Services from '../components/Services.astro';
+import PremiumExperiences from '../components/PremiumExperiences.astro';
 import WhyChoose from '../components/WhyChoose.astro';
 import Benefits from '../components/Benefits.astro';
 import Journey from '../components/Journey.astro';
-import Gallery from '../components/Gallery';
+import Gallery from '../components/Gallery.astro';
 import Testimonials from '../components/Testimonials.astro';
 import BookingPush from '../components/BookingPush.astro';
-import FAQ from '../components/FAQ';
+import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
-import StickyBookingDock from '../components/StickyBookingDock';
-import ScrollToTop from '../components/ScrollToTop';
-import Header from '../components/Header';
-import GlobalEffects from '../components/GlobalEffects';
-import Marquee from '../components/Marquee';
+import StickyBookingDock from '../components/StickyBookingDock.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import Header from '../components/Header.astro';
+import GlobalEffects from '../components/GlobalEffects.astro';
+import Marquee from '../components/Marquee.astro';
 ---
 
 <Layout 
   title="Auyvra Luxury Spa | Premium Spa Center Hyderabad"
   description="Discover premium spa Hyderabad services and expert body massage treatments designed to reduce stress, ease body fatigue, & restore complete relaxation."
 >
-  <GlobalEffects client:load />
-  <Header client:load />
+  <GlobalEffects />
+  <Header />
   <main class="relative bg-transparent z-10 pb-20">
     <Hero />
-    <Marquee client:load />
+    <Marquee />
     <About />
-    <Services client:visible />
-    <PremiumExperiences client:visible />
+    <Services />
+    <PremiumExperiences />
     <WhyChoose />
     <Benefits />
     <Journey />
-    <Gallery client:visible />
+    <Gallery />
     <Testimonials />
     <BookingPush />
-    <FAQ client:visible />
+    <FAQ />
     <Contact />
   </main>
   <Footer />
-  <StickyBookingDock client:load />
-  <ScrollToTop client:load />
+  <StickyBookingDock />
+  <ScrollToTop />
 </Layout>

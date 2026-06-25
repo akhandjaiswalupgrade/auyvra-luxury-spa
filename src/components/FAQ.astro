@@ -1,0 +1,117 @@
+---
+const faqs = [
+  {
+    q: "Where is Auyvra Luxury Spa located?",
+    a: "Auyvra Luxury Spa is located on the first floor, Green Hills Rd, above Ratnadeep Supermarket, IV Phase, Sevalal Nagar, Moosapet, Hyderabad, Telangana 500018."
+  },
+  {
+    q: "What are the spa timings?",
+    a: "Auyvra Luxury Spa is open Monday to Sunday from 10:00am to 9:00pm."
+  },
+  {
+    q: "How can I book an appointment?",
+    a: "You can easily book by calling or WhatsApping us at +91 73865 42499."
+  },
+  {
+    q: "What massage services are available?",
+    a: "We offer Thai Massage, Aroma Massage, Swedish Massage, Deep Tissue Massage, Hot Oil Massage, Foot Reflexology, Balinese Massage, Thai Yoga Massage, Candle Therapy Massage, Jacuzzi, Body Scrub Therapy, and VIP/VVIP spa experiences."
+  },
+  {
+    q: "Are 60-minute and 90-minute sessions available?",
+    a: "Yes, selected massage therapies are available in both 60-minute and 90-minute durations."
+  },
+  {
+    q: "Is steam available?",
+    a: "Yes, our VIP Signature Room with Steam is available for 90-minute sessions."
+  },
+  {
+    q: "Can I enquire before booking?",
+    a: "Absolutely. You can WhatsApp or call us to ask about services, slot availability, and appointment details before making a booking."
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-transparent relative border-y border-[#1a1a1a]" id="faq">
+  <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+    <div class="text-center mb-16">
+      <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-medium block mb-4">Answers</span>
+      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] leading-tight">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-4" id="faq-accordion">
+      {faqs.map((faq, index) => (
+        <div 
+          class={`faq-item border rounded-2xl overflow-hidden transition-all duration-300 ${index === 0 ? 'border-[#D4AF37]/50 bg-[#121212]' : 'border-[#1a1a1a] bg-[#0a0a0a] hover:border-[#D4AF37]/30'}`}
+        >
+          <button
+            class="faq-trigger w-full text-left px-6 py-6 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
+            data-index={index}
+            aria-expanded={index === 0 ? "true" : "false"}
+          >
+            <span class="text-[#FDFBF7] font-medium pr-8 leading-snug">{faq.q}</span>
+            <div
+              class={`faq-chevron text-[#D4AF37] shrink-0 transition-transform duration-300 ${index === 0 ? 'rotate-180' : 'rotate-0'}`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+          </button>
+          
+          <div
+            class={`faq-content transition-all duration-300 ease-in-out ${index === 0 ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}
+          >
+            <div class="px-6 pb-6 text-[#FDFBF7]/60 font-light leading-relaxed">
+              {faq.a}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const triggers = document.querySelectorAll('.faq-trigger');
+  const items = document.querySelectorAll('.faq-item');
+  const chevrons = document.querySelectorAll('.faq-chevron');
+  const contents = document.querySelectorAll('.faq-content');
+
+  triggers.forEach((trigger, i) => {
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all items
+      triggers.forEach((t, index) => {
+        t.setAttribute('aria-expanded', 'false');
+        items[index]?.classList.remove('border-[#D4AF37]/50', 'bg-[#121212]');
+        items[index]?.classList.add('border-[#1a1a1a]', 'bg-[#0a0a0a]');
+        chevrons[index]?.classList.remove('rotate-180');
+        chevrons[index]?.classList.add('rotate-0');
+        
+        const content = contents[index] as HTMLElement;
+        if (content) {
+          content.classList.remove('opacity-100');
+          content.classList.add('opacity-0', 'pointer-events-none');
+          content.style.maxHeight = '0px';
+        }
+      });
+
+      // Open clicked item if it was closed
+      if (!isOpen) {
+        trigger.setAttribute('aria-expanded', 'true');
+        items[i]?.classList.add('border-[#D4AF37]/50', 'bg-[#121212]');
+        items[i]?.classList.remove('border-[#1a1a1a]', 'bg-[#0a0a0a]');
+        chevrons[i]?.classList.remove('rotate-0');
+        chevrons[i]?.classList.add('rotate-180');
+        
+        const content = contents[i] as HTMLElement;
+        if (content) {
+          content.classList.remove('opacity-0', 'pointer-events-none');
+          content.classList.add('opacity-100');
+          content.style.maxHeight = '500px';
+        }
+      }
+    });
+  });
+</script>
