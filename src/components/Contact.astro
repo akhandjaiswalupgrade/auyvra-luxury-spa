@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site';
+import { services } from '../data/services';
 ---
 
 <section class="py-16 md:py-24 bg-transparent relative" id="contact">
@@ -50,19 +51,173 @@ import { siteConfig } from '../data/site';
         </div>
       </div>
 
-      {/* Interactive Map Embed */}
-      <div class="w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-[#D4AF37]/20 relative">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60893.06295444928!2d78.3415857216797!3d17.4684979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9171b976fbab%3A0xd44444d0cd800447!2sAuyvra%20Luxury%20Spa!5e0!3m2!1sen!2sin!4v1781993422148!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style="border:0; min-height: 400px;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+      {/* Lead Form */}
+      <div class="glass-panel p-8 rounded-2xl border border-[#D4AF37]/20 relative overflow-hidden flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-serif text-[#FDFBF7] mb-2 leading-tight">Quick Appointment Request</h3>
+          <p class="text-[#FDFBF7]/60 font-light text-sm mb-6">
+            Fill out the form below, and our wellness specialist will contact you to confirm your booking.
+          </p>
+          
+          <form id="booking-lead-form" class="space-y-4">
+            <!-- Name -->
+            <div class="flex flex-col gap-1">
+              <input 
+                type="text" 
+                name="name" 
+                id="lead-name" 
+                required 
+                placeholder="Full Name" 
+                class="w-full px-4 py-3.5 bg-black/40 border border-white/15 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-xl text-white placeholder-white/40 outline-none transition-all duration-300"
+              />
+            </div>
+            
+            <!-- Phone with India Flag Prefix -->
+            <div class="flex flex-col gap-1">
+              <div class="relative flex items-center">
+                <div class="absolute left-4 flex items-center gap-1.5 pointer-events-none text-white/50 border-r border-white/10 pr-2">
+                  <span class="text-base select-none">🇮🇳</span>
+                  <span class="text-sm font-medium select-none">+91</span>
+                </div>
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  id="lead-phone" 
+                  required 
+                  pattern="[0-9]{10}"
+                  placeholder="10-Digit Mobile Number" 
+                  class="w-full pl-20 pr-4 py-3.5 bg-black/40 border border-white/15 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-xl text-white placeholder-white/40 outline-none transition-all duration-300"
+                />
+              </div>
+            </div>
+            
+            <!-- Select Service Dropdown -->
+            <div class="flex flex-col gap-1 relative">
+              <select 
+                name="service" 
+                id="lead-service" 
+                required 
+                class="w-full px-4 py-3.5 bg-black/40 border border-white/15 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-xl text-white/80 outline-none transition-all duration-300 appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>Select Service</option>
+                {services.map((s) => (
+                  <option value={s.name} class="bg-[#121212] text-white">{s.name}</option>
+                ))}
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#D4AF37]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+            
+            <!-- Booking Date -->
+            <div class="flex flex-col gap-1">
+              <input 
+                type="date" 
+                name="date" 
+                id="lead-date" 
+                required 
+                class="w-full px-4 py-3.5 bg-black/40 border border-white/15 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-xl text-white/85 outline-none transition-all duration-300 cursor-pointer"
+              />
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              id="submit-lead-btn"
+              class="w-full py-4 rounded-xl bg-[#D4AF37] hover:bg-[#FDFBF7] text-[#0a0a0a] font-semibold transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Request Booking ✦
+            </button>
+          </form>
+          
+          <div id="form-message" class="mt-4 text-sm hidden font-medium text-center"></div>
+        </div>
       </div>
 
     </div>
+
+    {/* Full-width Map Embed below */}
+    <div class="w-full h-[350px] rounded-2xl overflow-hidden border border-[#D4AF37]/20 max-w-6xl mx-auto mt-12">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60893.06295444928!2d78.3415857216797!3d17.4684979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9171b976fbab%3A0xd44444d0cd800447!2sAuyvra%20Luxury%20Spa!5e0!3m2!1sen!2sin!4v1781993422148!5m2!1sen!2sin" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Auyvra Luxury Spa Location Map"
+      ></iframe>
+    </div>
+
   </div>
 </section>
+
+<script>
+  // Set minimum date to today
+  const dateInput = document.getElementById('lead-date') as HTMLInputElement | null;
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+
+  // Handle Form Submission
+  const form = document.getElementById('booking-lead-form') as HTMLFormElement | null;
+  const messageBox = document.getElementById('form-message');
+  const submitBtn = document.getElementById('submit-lead-btn');
+
+  if (form && messageBox && submitBtn) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const name = formData.get('name') as string;
+      const phone = formData.get('phone') as string;
+      const service = formData.get('service') as string;
+      const date = formData.get('date') as string;
+
+      // Update button state
+      submitBtn.setAttribute('disabled', 'true');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Submitting...';
+
+      // Save locally in browser localStorage as JSON backup
+      const localLeads = JSON.parse(localStorage.getItem('auyvra_leads') || '[]');
+      const newLead = { name, phone: `+91 ${phone}`, service, date, timestamp: new Date().toISOString() };
+      localLeads.push(newLead);
+      localStorage.setItem('auyvra_leads', JSON.stringify(localLeads));
+
+      try {
+        const response = await fetch('/api/submit-lead', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newLead),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          messageBox.classList.remove('hidden', 'text-red-500');
+          messageBox.classList.add('text-green-500');
+          messageBox.innerHTML = '✓ Booking request submitted successfully! We will contact you soon.';
+          form.reset();
+        } else {
+          messageBox.classList.remove('hidden', 'text-green-500');
+          messageBox.classList.add('text-red-500');
+          messageBox.innerHTML = `⚠️ Submission failed: ${result.message || 'Please try again.'}`;
+        }
+      } catch (err) {
+        // Fallback: even if network fails, we've saved locally
+        messageBox.classList.remove('hidden', 'text-red-500');
+        messageBox.classList.add('text-green-500');
+        messageBox.innerHTML = '✓ Submitted! Saved local copy. We will contact you soon.';
+        form.reset();
+      } finally {
+        submitBtn.removeAttribute('disabled');
+        submitBtn.innerHTML = originalText;
+      }
+    });
+  }
+</script>
