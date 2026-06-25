@@ -199,10 +199,8 @@ import { services } from '../data/services';
         const result = await response.json();
 
         if (response.ok) {
-          messageBox.classList.remove('hidden', 'text-red-500');
-          messageBox.classList.add('text-green-500');
-          messageBox.innerHTML = '✓ Booking request submitted successfully! We will contact you soon.';
           form.reset();
+          window.location.href = '/thank-you';
         } else {
           messageBox.classList.remove('hidden', 'text-green-500');
           messageBox.classList.add('text-red-500');

@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GlobalEffects from '../components/GlobalEffects.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout 
+  title="Thank You | Booking Received | Auyvra Luxury Spa"
+  description="Thank you for booking your premium spa session at Auyvra Luxury Spa Hyderabad. We will contact you shortly to confirm your slot."
+>
+  <GlobalEffects />
+  <Header />
+  
+  <main class="relative bg-transparent z-10 min-h-[85vh] flex items-center justify-center pt-32 pb-20">
+    <div class="container mx-auto px-4 md:px-6 text-center max-w-2xl">
+      
+      <!-- Success Icon -->
+      <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 flex items-center justify-center mx-auto mb-10 text-[#D4AF37] shadow-[0_0_50px_rgba(212,175,55,0.15)] animate-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-5xl font-serif text-[#FDFBF7] leading-tight mb-6">
+        Booking Request Received!
+      </h1>
+      
+      <p class="text-lg md:text-xl text-[#FDFBF7]/80 font-light leading-relaxed mb-10 max-w-lg mx-auto">
+        Thank you for choosing Auyvra Luxury Spa. Our wellness specialist will contact you via call or WhatsApp within 15–30 minutes to confirm your reservation.
+      </p>
+
+      <!-- Details Card -->
+      <div class="glass-panel p-6 md:p-8 rounded-2xl border border-[#D4AF37]/15 bg-[#0a0a0a]/70 backdrop-blur-sm max-w-md mx-auto mb-10 text-left space-y-4">
+        <h3 class="text-sm uppercase tracking-wider text-[#D4AF37] font-semibold text-center border-b border-[#D4AF37]/10 pb-2 mb-4">What's Next?</h3>
+        <div class="flex gap-4 text-sm font-light text-[#FDFBF7]/70">
+          <span class="text-[#D4AF37] font-semibold shrink-0">1.</span>
+          <p>We review your requested date, time, and service availability.</p>
+        </div>
+        <div class="flex gap-4 text-sm font-light text-[#FDFBF7]/70">
+          <span class="text-[#D4AF37] font-semibold shrink-0">2.</span>
+          <p>We call or text you to confirm and lock in your therapist slot.</p>
+        </div>
+        <div class="flex gap-4 text-sm font-light text-[#FDFBF7]/70">
+          <span class="text-[#D4AF37] font-semibold shrink-0">3.</span>
+          <p>Arrive and enjoy a premium, personalized wellness experience.</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a 
+          href="/" 
+          class="w-full sm:w-auto px-8 py-3.5 bg-[#D4AF37] hover:bg-[#F3E5AB] text-[#0a0a0a] font-medium rounded-full transition-all duration-300 text-center"
+        >
+          Back to Homepage
+        </a>
+        <a 
+          href={siteConfig.whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto px-8 py-3.5 bg-[#075E54] hover:bg-[#05433c] text-white font-medium rounded-full transition-all duration-300 text-center flex items-center justify-center gap-2"
+          style="text-shadow: 0 1px 2px rgba(0,0,0,0.8);"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollToTop />
+</Layout>
