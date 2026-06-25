@@ -52,13 +52,14 @@ const localBusinessSchema = {
 
 const spaSchema = {
   "@context": "https://schema.org",
-  "@type": "SpaOrHealthClub",
-  "@id": `${siteConfig.url}/#spaorhealthclub`,
-  "name": siteConfig.name,
-  "image": ogImageURL.href,
-  "url": siteConfig.url,
-  "telephone": siteConfig.phone,
+  "@type": "DaySpa",
+  "@id": "https://www.auyvraluxuryspa.in/#spaorhealthclub",
+  "name": "Auyvra Luxury Spa",
+  "image": "https://www.auyvraluxuryspa.in/images/generated/og_auyvra_luxury_spa.png",
+  "url": "https://www.auyvraluxuryspa.in/",
+  "telephone": "+91 73865 42499",
   "priceRange": "$$",
+  "hasMap": "https://maps.app.goo.gl/LjDgucmwgjRR76a3A",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "First floor, Green Hills Rd, above Ratnadeep Supermarket, IV Phase, Sevalal Nagar",
@@ -69,24 +70,25 @@ const spaSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 17.4684979,
-    "longitude": 78.4136835
+    "latitude": "17.4684979",
+    "longitude": "78.4136835"
   },
-  "hasMap": siteConfig.mapsUrl,
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "10:00",
-    "closes": "21:00"
-  }
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "21:00"
+    }
+  ]
 };
 
 const faqSchema = {
