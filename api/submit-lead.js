@@ -50,7 +50,7 @@ export default async function handler(req, res) {
 
     if (resendApiKey) {
       // --- METHOD A: RESEND API (Preferred) ---
-      const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+      const fromEmail = process.env.RESEND_FROM_EMAIL || 'bookings@auyvraluxuryspa.in';
       
       // Determine recipient list
       let toEmails = ['mevryxind@gmail.com', 'auyvraluxuryspa@gmail.com'];
