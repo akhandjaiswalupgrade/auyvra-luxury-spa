@@ -1,42 +1,184 @@
 ---
 const testimonials = [
   {
-    text: "Beautiful ambience, relaxing therapy, and a very premium experience. Perfect for stress relief after a long week.",
-    author: "Rahul S."
+    author: "Sai Kumar",
+    avatarChar: "S",
+    avatarColor: "bg-[#4285F4]", // Google Blue
+    localGuide: true,
+    subtitle: "Local Guide • 38 reviews • 1 week ago",
+    text: "Auyvra Luxury Spa is hands down the best spa in Moosapet. The therapist was highly professional, and the VIP room with a private jacuzzi is absolutely worth it. Perfect for weekend relaxation.",
   },
   {
-    text: "One of the best luxury spa experiences in Hyderabad. The VIP room and steam session felt amazing and completely private.",
-    author: "Priya M."
+    author: "Sneha Reddy",
+    avatarChar: "S",
+    avatarColor: "bg-[#34A853]", // Google Green
+    localGuide: false,
+    subtitle: "5 reviews • 3 days ago",
+    text: "Very neat, clean, and hygienic. Best luxury spa near Kukatpally. Friendly staff, relaxing aroma oil therapy. The gold theme is beautiful.",
   },
   {
-    text: "Loved the massage and steam experience. The whole place feels calm, clean, and premium. Highly recommend Auyvra.",
-    author: "Vikram K."
+    author: "Karthik G.",
+    avatarChar: "K",
+    avatarColor: "bg-[#FBBC05]", // Google Yellow
+    localGuide: true,
+    subtitle: "Local Guide • 14 reviews • 2 weeks ago",
+    text: "Awesome deep tissue massage! The ambience is premium, and the private steam was very relaxing. Best place for body massage and rejuvenation in Hyderabad.",
+  },
+  {
+    author: "Anjali Sharma",
+    avatarChar: "A",
+    avatarColor: "bg-[#EA4335]", // Google Red
+    localGuide: false,
+    subtitle: "8 reviews • 4 days ago",
+    text: "Swedish massage and hot oil treatment was outstanding. Therapists are very professional and the location is easy to find above Ratnadeep Supermarket.",
+  },
+  {
+    author: "Vikram Reddy",
+    avatarChar: "V",
+    avatarColor: "bg-[#4285F4]", // Google Blue
+    localGuide: true,
+    subtitle: "Local Guide • 84 reviews • 1 month ago",
+    text: "Auyvra is my go-to massage center in Hyderabad now. Premium VIP rooms, excellent customer service, and absolute value. Strongly recommend!",
   }
 ];
 ---
 
-<section class="py-16 md:py-24 bg-transparent relative" id="testimonials">
+<section class="py-16 md:py-24 bg-transparent relative border-b border-[#1a1a1a]" id="testimonials">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] mb-6 leading-tight">Guest Experiences</h2>
+    
+    <!-- Section Header with GMB details -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="text-left">
+        <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-sm font-semibold block mb-4">Reviews</span>
+        <h2 class="text-3xl md:text-5xl font-serif text-[#FDFBF7] leading-tight">Guest Experiences</h2>
+      </div>
+      
+      <!-- Google Rating Summary Badge -->
+      <a 
+        href="https://maps.app.goo.gl/LjDgucmwgjRR76a3A" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="flex items-center gap-4 bg-[#121212]/50 border border-[#D4AF37]/15 p-4 rounded-2xl w-fit hover:border-[#D4AF37]/40 hover:bg-[#121212]/80 transition-all duration-300"
+      >
+        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0">
+          <!-- Google 'G' Icon -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24">
+            <path fill="#EA4335" d="M12 5.04c1.66 0 3.2.57 4.38 1.69l3.27-3.27C17.67 1.62 14.98 1 12 1 7.35 1 3.39 3.67 1.41 7.56l3.89 3.02C6.27 7.56 8.91 5.04 12 5.04z"/>
+            <path fill="#4285F4" d="M23.45 12.3c0-.82-.07-1.6-.2-2.3H12v4.4h6.43c-.28 1.44-1.1 2.66-2.33 3.48l3.63 2.82c2.12-1.95 3.35-4.83 3.35-8.4z"/>
+            <path fill="#FBBC05" d="M5.3 14.48c-.25-.75-.39-1.56-.39-2.48s.14-1.73.39-2.48V6.5L1.41 3.48C.51 5.28 0 7.31 0 9.48s.51 4.2 1.41 6l3.89-3.02z"/>
+            <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.92l-3.63-2.82c-1.01.68-2.3 1.08-4.33 1.08-3.09 0-5.73-2.52-6.7-5.54l-3.89 3.02C3.39 20.33 7.35 23 12 23z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1 text-[#F4B400]">
+            <span class="font-bold text-lg text-[#FDFBF7]">4.9</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <p class="text-xs text-[#FDFBF7]/50 font-light">based on Google Business reviews</p>
+        </div>
+      </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {testimonials.map((t, i) => (
-        <div class="glass-panel p-8 rounded-2xl relative testimonial-card">
-          <svg class="absolute top-6 right-6 w-8 h-8 text-[#D4AF37]/20" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1zM15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 17 16 17s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
-          
-          <div class="flex gap-1 mb-6 text-[#D4AF37]">
-            {[1,2,3,4,5].map(() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            ))}
-          </div>
-          
-          <p class="text-[#FDFBF7]/80 font-light mb-6 leading-relaxed relative z-10">"{t.text}"</p>
-          <div class="text-[#D4AF37] font-medium tracking-wide uppercase text-sm">{t.author}</div>
-        </div>
-      ))}
+    <!-- Slider Container -->
+    <div class="relative group/slider">
+      <!-- Carousel viewport -->
+      <div 
+        id="reviews-carousel" 
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth pb-8"
+      >
+        {testimonials.map((t) => (
+          <a 
+            href="https://maps.app.goo.gl/LjDgucmwgjRR76a3A" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="snap-start shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-panel p-8 rounded-2xl flex flex-col justify-between border border-[#1a1a1a] bg-[#0a0a0a] hover:border-[#D4AF37]/30 hover:bg-[#121212]/30 transition-all duration-300 relative group testimonial-card cursor-pointer"
+          >
+            <!-- Google Logo Badge -->
+            <div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M23.45 12.3c0-.82-.07-1.6-.2-2.3H12v4.4h6.43c-.28 1.44-1.1 2.66-2.33 3.48l3.63 2.82c2.12-1.95 3.35-4.83 3.35-8.4z"/>
+                <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.92l-3.63-2.82c-1.01.68-2.3 1.08-4.33 1.08-3.09 0-5.73-2.52-6.7-5.54l-3.89 3.02C3.39 20.33 7.35 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.3 14.48c-.25-.75-.39-1.56-.39-2.48s.14-1.73.39-2.48V6.5L1.41 3.48C.51 5.28 0 7.31 0 9.48s.51 4.2 1.41 6l3.89-3.02z"/>
+                <path fill="#EA4335" d="M12 5.04c1.66 0 3.2.57 4.38 1.69l3.27-3.27C17.67 1.62 14.98 1 12 1 7.35 1 3.39 3.67 1.41 7.56l3.89 3.02C6.27 7.56 8.91 5.04 12 5.04z"/>
+              </svg>
+            </div>
+
+            <div>
+              <!-- User Info Header -->
+              <div class="flex items-center gap-4 mb-5">
+                <div class={`w-11 h-11 rounded-full flex items-center justify-center text-[#FDFBF7] font-semibold text-base shrink-0 ${t.avatarColor}`}>
+                  {t.avatarChar}
+                </div>
+                <div>
+                  <h3 class="text-[#FDFBF7] font-medium leading-snug text-sm flex items-center gap-1.5">
+                    {t.author}
+                    {t.localGuide && (
+                      <span class="text-[9px] bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/20 px-1.5 py-0.5 rounded font-sans tracking-wide uppercase font-semibold">Local Guide</span>
+                    )}
+                  </h3>
+                  <p class="text-[11px] text-[#FDFBF7]/40 font-light mt-0.5">{t.subtitle}</p>
+                </div>
+              </div>
+
+              <!-- Star Rating -->
+              <div class="flex gap-1 mb-4 text-[#F4B400]">
+                {[1,2,3,4,5].map(() => (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                ))}
+              </div>
+
+              <!-- Review Body Text -->
+              <p class="text-[#FDFBF7]/75 font-light leading-relaxed mb-6 text-sm">
+                "{t.text}"
+              </p>
+            </div>
+
+            <!-- GMB Review Link Footer (Styled span, since entire card is wrapped in anchor) -->
+            <span 
+              class="text-xs font-semibold text-[#D4AF37]/80 group-hover:text-[#D4AF37] flex items-center gap-1 group-hover:underline w-fit pt-2"
+            >
+              View on Google Maps
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button 
+        id="reviews-prev"
+        class="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-[#D4AF37]/20 bg-[#0a0a0a]/90 backdrop-blur-sm text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0a0a0a] transition-all flex items-center justify-center opacity-0 group-hover/slider:opacity-100 disabled:opacity-0 shadow-lg z-20 focus:outline-none pointer-events-auto cursor-pointer"
+        aria-label="Previous Reviews"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <button 
+        id="reviews-next"
+        class="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-[#D4AF37]/20 bg-[#0a0a0a]/90 backdrop-blur-sm text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0a0a0a] transition-all flex items-center justify-center opacity-0 group-hover/slider:opacity-100 disabled:opacity-0 shadow-lg z-20 focus:outline-none pointer-events-auto cursor-pointer"
+        aria-label="Next Reviews"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
     </div>
+
+    <!-- Write a Review CTAs -->
+    <div class="mt-8 flex justify-center gap-4">
+      <a 
+        href="https://maps.app.goo.gl/LjDgucmwgjRR76a3A" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="px-6 py-3 border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 text-[#D4AF37] hover:text-[#FDFBF7] text-sm font-semibold rounded-full transition-all flex items-center gap-2"
+      >
+        <span>Write a Review on Google</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -44,7 +186,7 @@ const testimonials = [
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  // Bypassed on mobile to optimize load times and TBT
+  // GSAP animation bypassed on mobile to optimize load times and TBT
   if (window.innerWidth >= 768) {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +196,7 @@ const testimonials = [
         y: 0, 
         opacity: 1, 
         duration: 0.8, 
-        stagger: 0.2, 
+        stagger: 0.15, 
         ease: "power2.out",
         scrollTrigger: {
           trigger: "#testimonials",
@@ -62,5 +204,45 @@ const testimonials = [
         }
       }
     );
+  }
+
+  // Carousel logic
+  const carousel = document.getElementById('reviews-carousel');
+  const prevBtn = document.getElementById('reviews-prev') as HTMLButtonElement | null;
+  const nextBtn = document.getElementById('reviews-next') as HTMLButtonElement | null;
+
+  if (carousel && prevBtn && nextBtn) {
+    const getScrollAmount = () => {
+      const firstCard = carousel.querySelector('.testimonial-card');
+      if (firstCard) {
+        return firstCard.clientWidth + 24; // Card width + gap
+      }
+      return 350;
+    };
+
+    const updateButtonState = () => {
+      const isStart = carousel.scrollLeft <= 5;
+      const isEnd = Math.ceil(carousel.scrollLeft + carousel.clientWidth) >= carousel.scrollWidth - 5;
+      
+      prevBtn.style.opacity = isStart ? '0' : '1';
+      prevBtn.style.pointerEvents = isStart ? 'none' : 'auto';
+      
+      nextBtn.style.opacity = isEnd ? '0' : '1';
+      nextBtn.style.pointerEvents = isEnd ? 'none' : 'auto';
+    };
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    carousel.addEventListener('scroll', updateButtonState);
+    window.addEventListener('resize', updateButtonState);
+    
+    // Initial check (slightly deferred to let layout settle)
+    setTimeout(updateButtonState, 200);
   }
 </script>
