@@ -73,7 +73,7 @@
     }
 
     body {
-      padding-bottom: 70px; /* Space for mobile sticky footer */
+      padding-bottom: 75px; /* Space for mobile sticky footer */
     }
 
     @media (min-width: 768px) {
@@ -118,7 +118,7 @@
     .section-header {
       text-align: center;
       margin-bottom: 40px;
-      max-w: 800px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -294,14 +294,14 @@
     /* Load lighter mobile background on small screens */
     @media (max-width: 767px) {
       .hero {
-        background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)), url('/images/generated/hero_luxury_spa_hyderabad_mobile.webp');
+        background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)), url('images/hero_luxury_spa_hyderabad_mobile.webp');
       }
     }
 
     /* Load high-res desktop background on larger screens */
     @media (min-width: 768px) {
       .hero {
-        background-image: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8)), url('/images/generated/hero_luxury_spa_hyderabad.webp');
+        background-image: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8)), url('images/hero_luxury_spa_hyderabad.webp');
         min-height: 90vh;
       }
     }
@@ -804,20 +804,29 @@
       left: 0;
       right: 0;
       z-index: 999;
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(15px);
       border-top: 1px solid var(--border-color);
-      padding: 10px 15px env(safe-area-inset-bottom) 15px;
-      display: grid;
-      grid-template-cols: repeat(3, 1fr);
-      gap: 10px;
+      padding: 10px 10px calc(10px + env(safe-area-inset-bottom)) 10px;
+      display: flex;
+      gap: 8px;
+      width: 100%;
     }
 
     .sticky-btn {
-      padding: 12px 5px;
-      font-size: 0.72rem;
+      flex: 1;
+      min-width: 0;
+      padding: 12px 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
       border-radius: 30px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: auto !important; /* override global .btn width: 100% */
     }
 
     @media (min-width: 768px) {
@@ -836,8 +845,8 @@
   <!-- Header -->
   <header class="main-header">
     <div class="container header-content">
-      <a href="/lp/">
-        <img src="/images/logo.webp" alt="Auyvra Luxury Spa Logo" class="logo-img">
+      <a href="index.html">
+        <img src="images/logo.webp" alt="Auyvra Luxury Spa Logo" class="logo-img">
       </a>
       <div class="header-actions">
         <a href="tel:+917386542499" class="btn btn-gold header-btn">Call Now</a>
@@ -894,7 +903,7 @@
         <!-- Service 1 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/thai_dry_massage.webp" alt="Thai Massage — Dry" class="service-img" loading="lazy">
+            <img src="images/thai_dry_massage.webp" alt="Thai Massage — Dry" class="service-img" loading="lazy">
             <span class="service-duration">60 / 90 Mins</span>
           </div>
           <div class="service-info">
@@ -911,7 +920,7 @@
         <!-- Service 2 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/aroma_candle_therapy.webp" alt="Aroma Massage" class="service-img" loading="lazy">
+            <img src="images/aroma_candle_therapy.webp" alt="Aroma Massage" class="service-img" loading="lazy">
             <span class="service-duration">60 / 90 Mins</span>
           </div>
           <div class="service-info">
@@ -928,7 +937,7 @@
         <!-- Service 3 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/swedish_massage.webp" alt="Swedish Massage" class="service-img" loading="lazy">
+            <img src="images/swedish_massage.webp" alt="Swedish Massage" class="service-img" loading="lazy">
             <span class="service-duration">60 / 90 Mins</span>
           </div>
           <div class="service-info">
@@ -945,7 +954,7 @@
         <!-- Service 4 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/deep_tissue_massage.webp" alt="Deep Tissue Massage" class="service-img" loading="lazy">
+            <img src="images/deep_tissue_massage.webp" alt="Deep Tissue Massage" class="service-img" loading="lazy">
             <span class="service-duration">60 / 90 Mins</span>
           </div>
           <div class="service-info">
@@ -962,7 +971,7 @@
         <!-- Service 5 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/hot_oil_massage.webp" alt="Hot Oil Massage" class="service-img" loading="lazy">
+            <img src="images/hot_oil_massage.webp" alt="Hot Oil Massage" class="service-img" loading="lazy">
             <span class="service-duration">60 / 90 Mins</span>
           </div>
           <div class="service-info">
@@ -979,7 +988,7 @@
         <!-- Service 6 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/foot_reflexology.webp" alt="Foot Reflexology" class="service-img" loading="lazy">
+            <img src="images/foot_reflexology.webp" alt="Foot Reflexology" class="service-img" loading="lazy">
             <span class="service-duration">60 Mins</span>
           </div>
           <div class="service-info">
@@ -996,7 +1005,7 @@
         <!-- Service 7 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/vip_signature_room.webp" alt="VIP Signature Room" class="service-img" loading="lazy">
+            <img src="images/vip_signature_room.webp" alt="VIP Signature Room" class="service-img" loading="lazy">
             <span class="service-duration">60 Mins (VIP)</span>
           </div>
           <div class="service-info">
@@ -1013,7 +1022,7 @@
         <!-- Service 8 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/steam_vip_room.webp" alt="VIP Signature Room with Steam" class="service-img" loading="lazy">
+            <img src="images/steam_vip_room.webp" alt="VIP Signature Room with Steam" class="service-img" loading="lazy">
             <span class="service-duration">90 Mins (VIP)</span>
           </div>
           <div class="service-info">
@@ -1030,7 +1039,7 @@
         <!-- Service 9 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/jacuzzi_luxury_experience.webp" alt="Royal Jacuzzi Massage" class="service-img" loading="lazy">
+            <img src="images/jacuzzi_luxury_experience.webp" alt="Royal Jacuzzi Massage" class="service-img" loading="lazy">
             <span class="service-duration">Premium (VIP)</span>
           </div>
           <div class="service-info">
@@ -1047,7 +1056,7 @@
         <!-- Service 10 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/body_scrub_therapy.webp" alt="Body Scrub Therapy" class="service-img" loading="lazy">
+            <img src="images/body_scrub_therapy.webp" alt="Body Scrub Therapy" class="service-img" loading="lazy">
             <span class="service-duration">Premium</span>
           </div>
           <div class="service-info">
@@ -1064,7 +1073,7 @@
         <!-- Service 11 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/candle_massage.webp" alt="Candle Therapy Massage" class="service-img" loading="lazy">
+            <img src="images/candle_massage.webp" alt="Candle Therapy Massage" class="service-img" loading="lazy">
             <span class="service-duration">Premium</span>
           </div>
           <div class="service-info">
@@ -1081,7 +1090,7 @@
         <!-- Service 12 -->
         <div class="glass-panel service-card">
           <div class="service-img-wrapper">
-            <img src="/images/generated/thai_yoga_massage.webp" alt="Thai Yoga Massage" class="service-img" loading="lazy">
+            <img src="images/thai_yoga_massage.webp" alt="Thai Yoga Massage" class="service-img" loading="lazy">
             <span class="service-duration">Premium</span>
           </div>
           <div class="service-info">
@@ -1091,6 +1100,23 @@
             </div>
             <div class="service-actions">
               <a href="https://wa.me/917386542499?text=Hi%20Auyvra%20Luxury%20Spa,%20I%20want%20to%20book%20Thai%20Yoga%20Massage." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">Book on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 13 -->
+        <div class="glass-panel service-card">
+          <div class="service-img-wrapper">
+            <img src="images/balinese_massage.webp" alt="Balinese Massage" class="service-img" loading="lazy">
+            <span class="service-duration">Premium</span>
+          </div>
+          <div class="service-info">
+            <div>
+              <h3 class="service-name">Balinese Massage</h3>
+              <p class="service-desc">Traditional Indonesian full-body treatment combining gentle stretches, skin rolling, and aromatherapy.</p>
+            </div>
+            <div class="service-actions">
+              <a href="https://wa.me/917386542499?text=Hi%20Auyvra%20Luxury%20Spa,%20I%20want%20to%20book%20Balinese%20Massage." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">Book on WhatsApp</a>
             </div>
           </div>
         </div>
@@ -1305,7 +1331,7 @@
   <!-- Footer -->
   <footer class="main-footer">
     <div class="container">
-      <img src="/images/logo.webp" alt="Auyvra Luxury Spa Logo" class="footer-logo">
+      <img src="images/logo.webp" alt="Auyvra Luxury Spa Logo" class="footer-logo">
       <p class="footer-tagline">Experience premium wellness, relaxation and rejuvenation therapies in Hyderabad. We offer body massage and luxury treatments designed for your ultimate comfort.</p>
       <div class="footer-links">
         <a href="/privacy" class="footer-link">Privacy Policy</a>
@@ -1318,12 +1344,12 @@
   <!-- Mobile Sticky Booking Bar -->
   <div class="mobile-sticky-bar">
     <a href="tel:+917386542499" class="btn btn-gold sticky-btn">
-      📞 Call Now
+      📞 Call
     </a>
     <a href="https://wa.me/917386542499?text=Hi%20Auyvra%20Luxury%20Spa,%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp sticky-btn">
       💬 WhatsApp
     </a>
-    <a href="https://maps.app.goo.gl/LjDgucmwgjRR76a3A" target="_blank" rel="noopener noreferrer" class="btn btn-outline sticky-btn" style="font-size: 0.65rem;">
+    <a href="https://maps.app.goo.gl/LjDgucmwgjRR76a3A" target="_blank" rel="noopener noreferrer" class="btn btn-outline sticky-btn">
       📍 Directions
     </a>
   </div>
@@ -1335,7 +1361,7 @@
       "@type": "LocalBusiness",
       "@id": "https://www.auyvraluxuryspa.in/#localbusiness",
       "name": "Auyvra Luxury Spa",
-      "image": "https://www.auyvraluxuryspa.in/images/generated/og_auyvra_luxury_spa.png",
+      "image": "https://www.auyvraluxuryspa.in/lp/images/og_auyvra_luxury_spa.png",
       "url": "https://www.auyvraluxuryspa.in/",
       "telephone": "+91 73865 42499",
       "priceRange": "$$",
@@ -1375,7 +1401,7 @@
       "@type": "DaySpa",
       "@id": "https://www.auyvraluxuryspa.in/#spa",
       "name": "Auyvra Luxury Spa",
-      "image": "https://www.auyvraluxuryspa.in/images/generated/og_auyvra_luxury_spa.png",
+      "image": "https://www.auyvraluxuryspa.in/lp/images/og_auyvra_luxury_spa.png",
       "url": "https://www.auyvraluxuryspa.in/",
       "telephone": "+91 73865 42499",
       "priceRange": "INR 1499 - 5000",
