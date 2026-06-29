@@ -471,6 +471,12 @@
       }
     }
 
+    @media (min-width: 1024px) {
+      .benefits-grid {
+        grid-template-cols: repeat(4, 1fr);
+      }
+    }
+
     .benefit-item {
       display: flex;
       gap: 20px;
@@ -538,8 +544,17 @@
     }
 
     @media (min-width: 1024px) {
+      .testimonials-carousel {
+        display: grid;
+        grid-template-cols: repeat(3, 1fr);
+        overflow-x: visible;
+        scroll-snap-type: none;
+        padding-bottom: 0;
+      }
+
       .testimonial-card {
-        width: calc(33.333% - 14px);
+        width: 100%;
+        flex-shrink: 1;
       }
     }
 
